@@ -1,0 +1,16 @@
+kernel=kernel
+ramdisk=ramdisk
+page_size=2048
+dt=dtb.img
+kernel_size=19830804
+ramdisk_size=9067791
+dtb_offset=0x01f08000
+dtb_size=25391
+base_addr=0x20200000
+kernel_offset=0x00008000
+ramdisk_offset=0x01008000
+tags_offset=0x00008100
+dtbo_offset=0xdfe00000
+cmd_line='quiet no_autorun_log=1 loglevel=1 dbg_mutex=0 androidboot.boot_devices=mstar_mci.0 buildvariant=user'
+board=""
+format=gzip

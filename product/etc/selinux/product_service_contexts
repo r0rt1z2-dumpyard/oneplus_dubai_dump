@@ -1,0 +1,10 @@
+#line 1 "vendor/mediatek/proprietary_tv/open/system/sepolicy/product/private/service_contexts"
+DMRemoteService                     u:object_r:dmremote_service:s0
+hwcomposer-control                  u:object_r:hw_comp_ctrl_service:s0
+mediatek_network_service            u:object_r:mtk_network_service:s0
+MTK.audio.uploadservice             u:object_r:audio_upload_service:s0
+mtkwfd                              u:object_r:mtkwfd_service:s0
+pppoe                               u:object_r:mstar_pppoe_service:s0
+pppoedial                           u:object_r:pppoedial_service:s0
+tv_input_hal                        u:object_r:tv_input_hal_service:s0
+TVRemoteService                     u:object_r:tvremote_service:s0

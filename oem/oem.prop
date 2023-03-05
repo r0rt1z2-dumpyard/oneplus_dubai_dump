@@ -1,0 +1,9 @@
+ro.product.name=OnePlusTV
+ro.product.brand=OnePlus
+ro.product.device=Dubai
+ro.product.manufacturer=OnePlus
+ro.product.model=D00
+ro.com.google.clientidbase=android-oneplus-tv
+ro.vendor.nrdp.modelgroup=Dubai
+ro.vendor.nrdp.validation=ninja_8
+oem.buildnumber=eng.rickyu.20210719.141725

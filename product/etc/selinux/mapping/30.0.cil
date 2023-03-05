@@ -1,0 +1,3 @@
+(typeattributeset phony_30_0 (phony))
+(expandtypeattribute (phony_30_0) true)
+(typeattribute phony_30_0)

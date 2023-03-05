@@ -1,0 +1,22 @@
+# Android fstab file.
+#<src>                                                  <mnt_point>         <type>    <mnt_flags>             <fs_mgr_flags>
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+system                                                 /mnt/system           ext4      ro,barrier=1           wait,logical,slotselect
+vendor                                                 /mnt/vendor           ext4      ro,barrier=1           wait,logical,slotselect
+/dev/block/sda1                                        /sdcard               vfat      defaults               defaults
+/dev/block/platform/mstar_mci.0/by-name/userdata       /data                 ext4      noatime,nosuid,nodev   wait,block_validity,nodiscard,data=ordered,journal_checksum
+/dev/block/platform/mstar_mci.0/by-name/metadata       /metadata             ext4      noatime,nosuid,nodev,noexec,discard,sync              wait,formattable,first_stage_mount
+/dev/block/platform/mstar_mci.0/by-name/cache          /cache                ext4      noatime,nosuid,nodev   wait,block_validity,nodiscard,data=ordered,journal_checksum
+/dev/block/platform/mstar_mci.0/by-name/tvservice      /mnt/vendor/tvservice ext4      ro                     wait,slotselect
+/dev/block/platform/mstar_mci.0/by-name/tvconfig       /mnt/vendor/tvconfig  ext4      rw                     wait
+/dev/block/platform/mstar_mci.0/by-name/tvcertificate  /mnt/vendor/tvcertificate ext4      noatime,nosuid,nodev   wait,block_validity,nodiscard,data=ordered,journal_checksum
+/dev/block/platform/mstar_mci.0/by-name/3rd_a          /mnt/vendor/3rd       squashfs  ro                     wait
+/dev/block/platform/mstar_mci.0/by-name/3rd_rw         /mnt/vendor/3rd_rw    ext4      defaults,noatime       wait
+/dev/block/platform/mstar_mci.0/by-name/MBOOT          /MBOOT                emmc      defaults               defaults
+/dev/block/platform/mstar_mci.0/by-name/MPOOL          /MPOOL                emmc      defaults               defaults
+/dev/block/platform/mstar_mci.0/by-name/misc           /misc                 emmc      defaults               defaults
+/dev/block/platform/mstar_mci.0/by-name/vbmeta         /vbmeta               emmc      defaults               defaults,slotselect
+/dev/block/platform/mstar_mci.0/by-name/vbmeta_system  /vbmeta_system        emmc      defaults               defaults,slotselect
+/dev/block/platform/mstar_mci.0/by-name/boot           /boot                 emmc      defaults               defaults,slotselect

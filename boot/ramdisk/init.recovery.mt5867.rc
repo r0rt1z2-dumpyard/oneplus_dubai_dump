@@ -1,0 +1,64 @@
+on early-init
+    insmod /system/etc/init/ehci-hcd.ko
+    insmod /system/etc/init/udc-msb250x.ko
+    insmod /system/etc/init/phy-ms-usb.ko
+
+on init
+    mkdir /data/property
+    # sdcard/usb mount points
+    mkdir /mnt
+    mkdir /mnt/sdcard
+    mkdir /mnt/usb
+    mkdir /mnt/usb/sda1
+    mkdir /mnt/usb/mmcblka1
+    mkdir /storage
+
+on early-fs
+    write /proc/sys/kernel/printk 7
+    setprop sys.usb.configfs 1
+
+on fs
+    mkdir /mnt/vendor/tvservice
+    mkdir /mnt/vendor/tvconfig
+    mkdir /mnt/vendor/cusdata
+    mkdir /mnt/vendor/project_id
+    mkdir /mnt/vendor/extconfig
+    mount ext4 /dev/block/platform/mstar_mci.0/by-name/cusdata /mnt/vendor/cusdata wait rw block_validity nodiscard data=ordered journal_checksum
+    mount ext4 /dev/block/platform/mstar_mci.0/by-name/project_id /mnt/vendor/project_id wait rw block_validity nodiscard data=ordered journal_checksum
+    mount ext4 /dev/block/platform/mstar_mci.0/by-name/extconfig /mnt/vendor/extconfig wait rw block_validity nodiscard data=ordered journal_checksum
+    mount ext4 /dev/block/platform/mstar_mci.0/by-name/tvservice /mnt/vendor/tvservice wait ro block_validity nodiscard data=ordered journal_checksum
+    mount ext4 /dev/block/platform/mstar_mci.0/by-name/tvconfig /mnt/vendor/tvconfig wait ro block_validity nodiscard data=ordered journal_checksum
+
+    # restore security contexts here to label those device nodes created by utopia
+    restorecon /dev/gflip
+    restorecon /dev/msmailbox
+    restorecon /dev/system
+
+# Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
+#service watchdogd /sbin/watchdogd 10 20
+#    class core
+# enable ir input for reboot recovery case
+    write /sys/module/mdrv_ir/parameters/input_event_en 1
+    write /sys/module/mdrv_ir/parameters/input_dev_event_enable 1
+
+on post-fs
+    symlink /dev/block/by-name/MBOOT /dev/block/platform/mstar_mci.0/by-name/mboot_a
+    symlink /dev/block/by-name/MBOOT /dev/block/platform/mstar_mci.0/by-name/mboot_b
+    symlink /dev/block/by-name/upgrade /dev/block/platform/mstar_mci.0/by-name/upgrade_a
+    symlink /dev/block/by-name/upgrade /dev/block/platform/mstar_mci.0/by-name/upgrade_b
+
+on property:ro.debuggable=1
+    start console
+
+on property:sys.usb.config=fastboot
+    # umount /cache for fastboot -w works!
+    umount /cache
+
+service console /system/bin/sh
+    class core
+    console
+    disabled
+    user root
+    group shell log readproc
+    seclabel u:r:shell:s0
+    setenv HOSTNAME console

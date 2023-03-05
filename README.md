@@ -1,0 +1,19 @@
+## OnePlusTV-user 11 RTM1.210315.027 2211042104 release-keys
+- Manufacturer: oneplus
+- Platform: mt5867
+- Codename: Dubai
+- Brand: OnePlus
+- Flavor: Dubai_eu-user
+- Release Version: 11
+- Kernel Version: 4.19.116
+- Id: RTM1.210315.027
+- Incremental: 2211042104
+- Tags: release-keys
+- CPU Abilist: armeabi-v7a,armeabi
+- A/B Device: true
+- Locale: en-IN
+- Screen Density: undefined
+- Fingerprint: OnePlus/OnePlusTV/Dubai:11/RTM1.210315.027/2211042104:user/release-keys
+- OTA version: 
+- Branch: OnePlusTV-user-11-RTM1.210315.027-2211042104-release-keys
+- Repo: oneplus_dubai_dump
