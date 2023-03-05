@@ -1,0 +1,8 @@
+#!/system/bin/sh
+# Script to start "capture" on the device, which has a very rudimentary
+# shell.
+#
+base=/system
+export CLASSPATH=$base/framework/capture.jar
+exec app_process $base/bin com.mediatek.capture.Capture $*
+

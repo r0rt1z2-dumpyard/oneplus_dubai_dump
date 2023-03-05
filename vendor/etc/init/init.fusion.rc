@@ -1,0 +1,241 @@
+import /vendor/etc/init/hw/init.boottime_trace.rc
+
+on early-fs
+    # improve performace from Google's suggestion
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/read_ahead_kb 2048
+    write /sys/block/mmcblk0/queue/nr_requests 256
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/mmcblk0/queue/rq_affinity 2
+
+on post-fs
+    # Improve Android DM-Verify performance
+    write /sys/module/dm_bufio/parameters/max_cache_size_bytes 18481152
+    write /proc/sys/vm/watermark_boost_factor 0
+    write /proc/sys/vm/swappiness 60
+
+on post-fs-data
+    # Todo: fix the ART MMAP 1GB failure
+    write /proc/sys/vm/overcommit_memory 1
+
+on early-boot
+    # improve performance from Google's suggestion
+    write /proc/sys/kernel/sched_migration_cost_ns 100000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 1000000
+    write /proc/sys/kernel/sched_min_granularity_ns 1500000
+    write /proc/sys/kernel/sched_latency_ns 1000000
+
+    insmod /vendor/lib/modules/iniparser.ko
+    insmod /vendor/lib/modules/kheaders.ko
+
+    # insert USB driver
+    insmod /vendor/lib/modules/ehci-hcd.ko
+    insmod /vendor/lib/modules/udc-msb250x.ko
+    insmod /vendor/lib/modules/phy-ms-usb.ko
+
+    # insert XC driver
+    insmod /vendor/lib/modules/kdrv_platform.ko
+    insmod /vendor/lib/modules/kdrv_xc.ko
+    insmod /vendor/lib/modules/kdrv_alg.ko
+    insmod /vendor/lib/modules/libdmdbraslia.ko
+    write /proc/boottime "utpa2k.ko start"
+    insmod /vendor/lib/modules/utpa2k.ko
+    write /proc/boottime "utpa2k.ko end"
+
+    insmod /vendor/lib/modules/hdcp1x.ko
+    insmod /vendor/lib/modules/hdcp2x.ko
+    insmod /vendor/lib/modules/xcker.ko
+    insmod /vendor/lib/modules/mwgifker.ko
+    insmod /vendor/lib/modules/misck.ko
+
+    write /proc/boottime "mik.ko start"
+    insmod /vendor/lib/modules/mik.ko
+    write /proc/boottime "mik.ko end"
+
+    # insert mali driver
+    insmod /vendor/lib/modules/mali_kbase.ko
+
+    insmod /vendor/lib/modules/mstar_fbdev_mi.ko
+
+    # insert MTAL/MI3 Glue
+    insmod /vendor/lib/modules/dtv_driver.ko
+
+    # insert devnode driver
+    insmod /vendor/lib/modules/devnode.ko
+
+    # for memtrack
+    chmod 711 /sys/kernel/debug
+
+    chmod 444 /proc/cmdline
+
+    # restore security contexts of device nodes here
+    restorecon /dev/gflip
+    restorecon /dev/ir
+    restorecon /dev/msmailbox
+    restorecon /dev/system
+
+    export LINUX_3RD_PATH /mnt/vendor/3rd
+    export LINUX_3RD_RW_PATH /data/vendor/3rd_rw
+    export LINUX_BASIC_PATH /mnt/vendor/linux_rootfs/basic
+    export LINUX_ETC_PATH /mnt/vendor/linux_rootfs/etc
+    export LINUX_PERM_PATH /perm
+    export LINUX_ROOTFS_PATH /mnt/vendor/linux_rootfs
+    export LINUX_TMP_PATH /mnt/vendor/tmp
+    export LINUX_PERSIST_PATH /vendor/persist
+    export LINUX_RECIPE_PATH /vendor/recipe
+
+    mkdir /data/vendor/3rd_rw
+    mkdir /data/vendor/upgrade
+    mkdir /data/vendor/etc
+    chmod 777 /data/vendor/etc
+    write /data/vendor/etc/resolv.conf "nameserver 8.8.8.8"
+    chmod 777 /data/vendor/etc/resolv.conf
+    mkdir /data/vendor/fifo
+    chmod 777 /data/vendor/fifo
+    mount_all /vendor/etc/fstab_late.mt5867
+    restorecon_recursive /data/vendor/3rd_rw
+    restorecon_recursive /data/vendor/upgrade
+
+    # 2021-07-07 zilingyun. Start. Add for module upgrade
+    # Create a path for individual module upgrade (system system)
+    mkdir /data/vendor/3rd_rw/module_upgrade 0770 system system
+    restorecon_recursive /data/vendor/3rd_rw/module_upgrade
+    # 2021-07-07 zilingyun. End.
+
+    # Rick Yu for OptvFactory srv data store
+    mkdir /data/vendor/3rd_rw/OptvFactory 0755 system system
+    restorecon_recursive /data/vendor/3rd_rw/OptvFactory
+    # end
+
+    # add for temp path
+    mkdir /mnt/vendor/tmp
+    mount tmpfs tmpfs /mnt/vendor/tmp size=100M nr_inodes=1k mode=1771
+    restorecon_recursive /mnt/vendor/tmp
+
+    chmod 0771 /mnt/vendor/tmp
+    chown root system /mnt/vendor/tmp
+
+    mkdir /mnt/vendor/tmp/camera
+    chmod 0771 /mnt/vendor/tmp/camera
+    chown root camera /mnt/vendor/tmp/camera
+    chmod 0660 /dev/video*
+    chown root camera /dev/video*
+
+    mkdir /mnt/vendor/tmp/meminfo_log
+    chmod 0771 /mnt/vendor/tmp/meminfo_log
+    chown root system /mnt/vendor/tmp/meminfo_log
+
+    write /mnt/vendor/tmp/perm_mounted 0
+    write /mnt/vendor/tmp/basic_mounted 0
+    write /mnt/vendor/tmp/mknod_util_end 0
+    # insert kernel module cfg80211, MUST ealier than wificond and wlan_dongle_detect
+    insmod /vendor/lib/modules/firmware_class.ko path="/vendor/firmware/"
+    insmod /vendor/lib/modules/cfg80211.ko
+
+    insmod /vendor/lib/modules/mtk_lmkd.ko
+
+on property:init.svc.bootanim=running
+    restorecon /dev/stune/foreground/tasks
+    restorecon /dev/stune/top-app/tasks
+
+on property:sys.boot_completed=1
+    write /sys/module/lowmemorykiller/parameters/minfree "8192,10240,12288,14336,16384,20480"
+    write /proc/sys/vm/extra_free_kbytes 10800
+    write /proc/mtk_lmkd/oom_score_adj_threshold 700
+    write /sys/block/mmcblk0/queue/iostats 1
+    write /sys/block/mmcblk0/queue/read_ahead_kb 128
+    write /sys/block/mmcblk0/queue/nr_requests 128
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/mmcblk0/queue/rq_affinity 1
+
+    # Add following processes in mtk_lmkd white list for cts
+    write /proc/mtk_lmkd/privilege_list "decTestProcess1"
+    write /proc/mtk_lmkd/privilege_list "decTestProcess2"
+    write /proc/mtk_lmkd/privilege_list ".android.gms.ui"
+    write /proc/mtk_lmkd/privilege_list "com.heytap.dlna"
+    write /proc/mtk_lmkd/privilege_list "iot.castservice"
+    write /proc/mtk_lmkd/privilege_list "tap.iot.synergy"
+    write /proc/mtk_lmkd/privilege_list "om.heytap.olink"
+    write /proc/mtk_lmkd/privilege_list "id.providers.tv"
+    write /proc/mtk_lmkd/privilege_list "net.oneplus.odm"
+    write /proc/mtk_lmkd/privilege_list "us.odm.provider"
+    write /proc/mtk_lmkd/privilege_list "roid.tvlauncher"
+    write /proc/mtk_lmkd/privilege_list "gle.android.gms"
+    # Add following processes in mtk_lmkd white list for TVTS
+    write /proc/mtk_lmkd/privilege_list "android.vending"
+    write /proc/mtk_lmkd/privilege_list "roid.youtube.tv"
+    write /proc/mtk_lmkd/privilege_list "id.leanbackjank"
+    write /proc/mtk_lmkd/privilege_list ".android.videos"
+    # Add following processes in mtk_lmkd white list for cast play movies
+    write /proc/mtk_lmkd/privilege_list "ocessService1:0"
+    write /proc/mtk_lmkd/privilege_list "ocessService1:1"
+    write /proc/mtk_lmkd/privilege_list "ocessService1:2"
+    write /proc/mtk_lmkd/privilege_list "ocessService1:3"
+    write /proc/mtk_lmkd/privilege_list "ocessService1:4"
+    write /proc/mtk_lmkd/privilege_list "ocessService1:5"
+    # Add following processes in mtk_lmkd white list for CTS and OOBE
+    write /proc/mtk_lmkd/privilege_list "externalstorage"
+    write /proc/mtk_lmkd/privilege_list "e.process.gapps"
+    write /proc/mtk_lmkd/privilege_list "impleapp:remote"
+    write /proc/mtk_lmkd/privilege_list "ten.setupwraith"
+    write /proc/mtk_lmkd/privilege_list "id.partnersetup"
+    write /proc/mtk_lmkd/privilege_list "rapps.simpleapp"
+    write /proc/mtk_lmkd/privilege_list "perf.debuggable"
+
+# For to set ro.oem.key1(DTV01352868)
+on property:ro.vendor.mtk.oem.lock=1
+    setprop ro.oem.key1 ${ro.vendor.mtk.oem.key}
+
+# add for mopa ginga
+on property:ro.vendor.mtk.system.marketregion=sa
+    mount tmpfs tmpfs /mnt/vendor/3rd/ginga_mopa/applications size=8M mode=1771
+
+on property:vendor.mtk.stay.awake=enable
+    write /sys/power/wake_lock "stay_awake"
+
+on property:vendor.mtk.stay.awake=disable
+    write /sys/power/wake_unlock "stay_awake"
+
+# add for app launcher quickly.
+on property:sys.optv.drop.cache=1
+    write /proc/sys/vm/drop_caches 3
+
+# add for memory.
+on property:sys.optv.swap.warning=1
+    stop logd
+    stop gatekeeperd
+    stop tombstoned
+    stop cameraserver
+    stop traced
+    stop traced_probes
+
+on property:sys.optv.swap.warning=0
+    start logd
+    start tombstoned
+    start cameraserver
+    start adbd
+
+# create a config path for audio acr
+on property:ro.vendor.sys.alphonso.acr=1
+    mkdir /data/vendor/alphonso_acr
+    chmod 0771 /data/vendor/alphonso_acr
+    chown root system /data/vendor/alphonso_acr
+
+# k2logcat service
+service k2logcat /vendor/bin/k2logcat
+    class main
+    oneshot
+    seclabel u:r:mt_k2logcat:s0
+
+# setup_zram iservice
+service zram-svc /vendor/bin/sh /vendor/bin/setup_zram.sh
+    class main
+    oneshot
+    seclabel u:r:mt_zram-svc:s0
+
+# wlan dongle detect service
+service wlan_dongle_detect /vendor/bin/wlan_dongle_detect
+    class core
+    console
+    oneshot
+    seclabel u:r:mt_wlan_dongle_detect:s0

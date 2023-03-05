@@ -1,0 +1,248 @@
+#! /bin/sh
+
+echo "rc.local begin" > /proc/boottime
+if [ ! -f /dev/shm/shm_tmp ]; then
+mkdir -p /dev/shm/shm_tmp
+chmod 755 /dev/shm/shm_tmp
+fi
+
+sh /vendor/etc/rc.local.partial &
+echo "rc.local.partial done" > /proc/boottime
+BASIC_MOUNTED="no"
+if [ -f /etc/scripts/mount_main.sh ];then
+	sh /etc/scripts/mount_main.sh
+	echo "mount_main.sh" > /proc/boottime
+fi
+
+if [ $? -eq 0 ]; then
+BASIC_MOUNTED="yes"
+
+for INI_3RD in `ls ${LINUX_BASIC_PATH}/3rd_ini`;do
+	if [ -f ${LINUX_BASIC_PATH}/3rd_ini/$INI_3RD/global_env_setup.ini ]; then
+        echo "${LINUX_BASIC_PATH}/3rd_ini/$INI_3RD/global_env_setup.ini"
+		#source /vendor/basic/3rd_ini/$INI_3RD/global_env_setup.ini
+	fi
+done
+
+fi
+
+
+#
+# insert USB modules if fast-boot is not enable
+#
+if [ ! -f ${LINUX_ETC_PATH}/config/fastboot ]; then
+    if [ -f /etc/scripts/ins_usb_core_mod.sh ]; then   
+        sh /etc/scripts/ins_usb_core_mod.sh
+        echo "ins_usb_core_mod.sh" > /proc/boottime
+    fi
+
+    if [ -f /etc/scripts/ins_usb_sub_mod.sh ]; then   
+        sh /etc/scripts/ins_usb_sub_mod.sh
+        echo "ins_usb_sub_mod.sh" > /proc/boottime
+    fi
+fi
+grep -q file_upgrading /proc/cmdline
+if [ $? -eq 0 ];then
+    if [ -f /etc/checker.sh ]; then
+        if [ -f /etc/scripts/mount_perm.sh ]; then
+            sh /etc/scripts/mount_perm.sh
+            echo "mount_perm.sh" > /proc/boottime
+        fi
+        if [ -f /etc/scripts/mount_3rd.sh ];then
+            sh /etc/scripts/mount_3rd.sh
+            echo "mount_3rd.sh" > /proc/boottime
+	      fi
+	      if [ -f /etc/config/3rd_ro ];then
+	          if [ -f /etc/scripts/mount_3rd_ro.sh ];then
+	              sh /etc/scripts/mount_3rd_ro.sh
+	              echo "mount_3rd_ro.sh" > /proc/boottime
+	          fi
+	      fi
+        sh /etc/checker.sh
+        echo "checker.sh" > /proc/boottime
+    fi
+fi
+
+if [ "$BASIC_MOUNTED" = "yes" ]; then
+
+#if [ -e /etc/readahead ]; then
+ #   echo Start readahead /etc/readahead
+ #   busybox readahead `cat /etc/readahead` &
+#fi
+insmod /basic/fusion.ko
+echo "fusion.ko done" > /proc/boottime
+MANUAL_LAUNCH="no"
+MANUAL_3RD="no"
+
+#
+# Delay mount configuration
+#
+DELAY_MOUNT_3RD="yes"
+DELAY_MOUNT_PERM="yes"
+
+if [ -f /etc/config/no_delay_mount_3rd ];then
+DELAY_MOUNT_3RD=no
+fi
+
+if [ -f /etc/config/no_delay_mount_perm ];then
+DELAY_MOUNT_PERM=no
+fi
+
+if [ "$DELAY_MOUNT_3RD" = "no" ];then
+    if [ -f /etc/config/3rd_ro ];then
+        if [ -f /etc/scripts/mount_3rd_ro.sh ];then
+            sh /etc/scripts/mount_3rd_ro.sh
+            echo "mount_3rd_ro.sh" > /proc/boottime
+        fi
+    fi
+    
+    if [ -f /etc/scripts/mount_3rd.sh ];then
+        sh /etc/scripts/mount_3rd.sh
+        echo "mount_3rd.sh" > /proc/boottime
+    fi
+fi
+
+if [ "$DELAY_MOUNT_PERM" = "no" ];then
+    if [ -f /etc/scripts/mount_perm.sh ];then
+        sh /etc/scripts/mount_perm.sh
+        echo "mount_perm.sh" > /proc/boottime
+    fi
+fi
+
+if [ -e "/MAIN_PART_NAME/MANUAL_LAUNCH" ]; then
+    MANUAL_LAUNCH="yes"
+fi
+
+if [ ! -f /etc/config/fastboot ]; then
+    if [ -e "/MAIN_PART_NAME/MANUAL_3RD" ]; then
+        MANUAL_3RD="yes"
+    fi
+fi
+
+if [ "$MANUAL_LAUNCH" = "no" ]; then
+    grep _launch /proc/cmdline > /dev/null
+    if [ $? -eq 0 ]; then
+        grep manual_launch /proc/cmdline > /dev/null
+        if [ $? -eq 0 ]; then
+            MANUAL_LAUNCH="yes"
+    
+            if [ ! -f /etc/config/fastboot ]; then
+                grep manual_3rd /proc/cmdline > /dev/null
+                if [ $? -eq 0 ]; then
+                    MANUAL_3RD="yes"
+                fi
+            fi
+        else
+            grep all_launch /proc/cmdline > /dev/null
+            if [ $? -eq 0 ]; then
+                sh /etc/scripts/init_all.sh
+                echo "init_all.sh" > /proc/boottime
+            fi
+        fi
+    fi
+fi
+
+if [ "$MANUAL_LAUNCH" = "no" ]; then
+    if [ ! -d /system/framework ]; then
+    if [ -f ${LINUX_BASIC_PATH}/dtv_driver_adpt.ko ]; then
+        insmod ${LINUX_BASIC_PATH}/dtv_driver_adpt.ko
+        echo " dtv_driver_adpt.ko" > /proc/boottime
+    fi
+    if [ -f ${LINUX_BASIC_PATH}/mtkdolby.ko ]; then
+        insmod ${LINUX_BASIC_PATH}/mtkdolby.ko
+        echo " mtkdolby.ko" > /proc/boottime
+    fi
+    if [ -f ${LINUX_BASIC_PATH}/dtv_driver.ko ]; then
+        echo " dtv_driver.ko begin" > /proc/boottime
+        time insmod ${LINUX_BASIC_PATH}/dtv_driver.ko
+        echo " dtv_driver.ko done" > /proc/boottime
+    fi
+    fi
+    if [ ! -f /etc/config/net_delay_init ]; then
+        # Ethernet Driver
+        if [ -f "/etc/scripts/ins_eth_mod.sh" ]; then
+            sh /etc/scripts/ins_eth_mod.sh
+            echo "ins_eth_mod.sh" > /proc/boottime
+        fi
+
+        # Wifi Driver
+        if [ -f /etc/config/wifi ];then
+            if [ -f /etc/scripts/ins_usb_core_mod.sh ];then
+                sh /etc/scripts/ins_usb_core_mod.sh
+                echo "ins_usb_core_mod.sh" > /proc/boottime
+            fi
+            if [ -f /etc/scripts/ins_wifi_mod.sh ]; then
+                sh /etc/scripts/ins_wifi_mod.sh
+                echo "ins_wifi_mod.sh" > /proc/boottime
+            fi
+        fi
+    fi
+fi
+
+if [ -e /usr/local/etc/linux_auto_test ]; then
+mount /dev/pts
+/sbin/sshd
+if [ -e /usr/local/bin/log_capture ]; then
+mkdir -p  /tmp/autotest
+touch     /tmp/autotest/log
+chmod 666 /tmp/autotest/log
+/usr/local/bin/log_capture &
+chmod 0755 /tmp
+mkdir -p /tmp/.ssh
+chmod 0700 /tmp/.ssh
+cp -rf ${LINUX_BASIC_PATH}/.ssh/authorized_keys /tmp/.ssh
+chmod 0600 /tmp/.ssh/authorized_keys
+fi
+fi
+
+# if does not enable IPV6 in Makefile, but enable in kernel config,
+# there are some problem, So disable it for kernel
+if [ -f /etc/config/disable_ipv6 ]; then
+    if [ -f /proc/sys/net/ipv6/conf/all/disable_ipv6 ]; then
+        echo "disable ipv6"
+        echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+    fi
+fi
+
+# Twoworlds ZRAM is already setup in android boot up. This is only for linux.
+if [ ! -d /system/framework ]; then
+    if [ -f /sys/block/zram0/disksize ]; then
+        echo 31457280 > /sys/block/zram0/disksize # TODO
+        mkswap /dev/zram0
+        swapon /dev/zram0
+        #echo 20480 > /proc/sys/vm/min_free_kbytes # TODO
+    fi
+fi
+
+if [ -f ${LINUX_BASIC_PATH}/service_manager ]; then
+    ${LINUX_BASIC_PATH}/service_manager &
+fi
+
+if [ "$MANUAL_LAUNCH" = "no" ]; then
+    if [ -x "${LINUX_BASIC_PATH}/autorun.sh" ]; then
+      echo " autorun.sh" > /proc/boottime
+      autorun_log_enable=`cat /proc/cmdline | grep no_autorun_log=1`
+      if [ "$autorun_log_enable" != "" ]; then
+          sh ${LINUX_BASIC_PATH}/autorun.sh >/dev/null 2>&1
+      else
+          sh ${LINUX_BASIC_PATH}/autorun.sh
+      fi
+    else # no autorun.sh
+      ${LINUX_BASIC_PATH}/dtvap &
+      #/basic/app_man -c /basic/am_config&
+    fi
+
+fi # auto launch something (either autorun.sh or dtvap/app_man)
+
+fi # "basic" partition mounted
+
+
+if [ "$MANUAL_LAUNCH" = "no" ]; then
+    if [ -f /vendor/3rd/run.sh ]; then
+    sh /vendor/3rd/run.sh
+    echo "3rd/run.sh" > /proc/boottime
+    fi
+fi # "3rd" auto mount
+
+echo "rc.local done" > /proc/boottime
+#cd /usrbin && ./demo &

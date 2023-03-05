@@ -1,0 +1,6 @@
+# Aliases extracted from modules themselves.
+alias usb:v0E8Dp6632d*dc*dsc*dp*icFFiscFFipFFin* wlan_mt7668
+alias usb:v0E8Dp7666d*dc*dsc*dp*icFFiscFFipFFin* wlan_mt7668
+alias usb:v0E8Dp7668d*dc*dsc*dp*icFFiscFFipFFin* wlan_mt7668
+alias usb:v0E8Dp7663d*dc*dsc*dp*icFFiscFFipFFin* wlan_mt7663
+alias net-pf-16-proto-16-family-nl80211 cfg80211

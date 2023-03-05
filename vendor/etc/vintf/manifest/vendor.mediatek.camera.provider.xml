@@ -1,0 +1,11 @@
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.mediatek.camera.provider</name>
+        <transport>hwbinder</transport>
+        <version>2.4</version>
+        <interface>
+            <name>IMtkCameraProvider</name>
+            <instance>external/0</instance>
+        </interface>
+    </hal>
+</manifest>

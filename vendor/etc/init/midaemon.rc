@@ -1,0 +1,8 @@
+# service for mi
+service midaemon /vendor/bin/sh /vendor/bin/midaemon.sh
+    class core
+    console
+    oneshot
+    group system audio drmrpc
+    seclabel u:r:midaemon:s0
+

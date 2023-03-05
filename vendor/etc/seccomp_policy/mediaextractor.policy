@@ -1,0 +1,8 @@
+
+# for MTK extractors
+readlinkat: 1
+pread64: 1
+nanosleep: 1
+sched_getparam: 1
+set_tid_address: 1
+gettimeofday: 1

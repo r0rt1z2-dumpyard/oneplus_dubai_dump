@@ -1,0 +1,134 @@
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# MStar Smart TV IR Receiver.
+#
+
+key 116     POWER
+key 11      BUTTON_10
+key 2       BUTTON_1
+key 3       BUTTON_2
+key 4       BUTTON_3
+key 5       BUTTON_4
+key 6       BUTTON_5
+key 7       BUTTON_6
+key 8       BUTTON_7
+key 9       BUTTON_8
+key 10      BUTTON_9
+key 398     PROG_RED
+key 399     PROG_GREEN
+key 400     PROG_YELLOW
+key 401     PROG_BLUE
+key 103     DPAD_UP
+key 108     DPAD_DOWN
+key 105     DPAD_LEFT
+key 106     DPAD_RIGHT
+key 28      DPAD_CENTER
+key 363     LAST_CHANNEL
+key 402     CHANNEL_UP
+key 403     CHANNEL_DOWN
+key 115     VOLUME_UP
+key 114     VOLUME_DOWN
+key 104     STEM_1
+key 80      STEM_1
+key 109     PAGE_DOWN
+key 102     HOME
+key 139     MENU
+key 158     BACK
+key 365     TV
+key 113     VOLUME_MUTE
+key 167     MEDIA_RECORD
+key 138     STEM_3
+key 212     TV_INPUT_VGA_1
+key 358     INFO
+key 395     YEN
+key 82      WINDOW
+key 356     TV_POWER
+key 142     STEM_PRIMARY
+key 370     CAPTIONS
+key 79      TV_INPUT
+key 372     TV_ZOOM_MODE
+key 468     TV_TELETEXT
+key 466     MUHENKAN
+key 168     MEDIA_REWIND
+key 159     MEDIA_FAST_FORWARD
+key 165     MEDIA_PREVIOUS
+key 163     MEDIA_NEXT
+key 207     MEDIA_PLAY
+key 119     MEDIA_PAUSE
+key 164     MEDIA_PLAY_PAUSE
+key 128     MEDIA_STOP
+key 392     MEDIA_AUDIO_TRACK
+key 469     CAPTIONS
+key 471     SYSRQ
+key 583     PAIRING
+
+# 20210731 Jibin.Ge add for OPPO RC, CANNOT DELETE
+key 59      F1
+key 60      F2
+key 61      F12
+key 62      F4
+key 64      F6
+key 65      F10
+key 66      F8
+key 67      F9
+key 68      F9
+key 87      F11
+key 88      F12
+key 183     F13
+
+# 2020-12-12 Rick Start
+# The following key codes are defined by Oneplus for factory.
+key 704     CUSTOM_1
+key 705     CUSTOM_2
+key 706     CUSTOM_3
+key 707     CUSTOM_4
+key 708     CUSTOM_5
+key 709     CUSTOM_6
+key 710     CUSTOM_7
+key 711     CUSTOM_8
+key 712     CUSTOM_9
+key 713     CUSTOM_10
+key 714     CUSTOM_11
+key 715     CUSTOM_12
+key 716     CUSTOM_13
+key 717     CUSTOM_14
+key 718     CUSTOM_15
+key 719     CUSTOM_16
+key 720     CUSTOM_17
+key 721     CUSTOM_18
+key 722     CUSTOM_19
+key 723     CUSTOM_20
+key 724     CUSTOM_21
+key 725     CUSTOM_22
+key 726     CUSTOM_23
+key 727     CUSTOM_24
+key 728     CUSTOM_25
+key 729     CUSTOM_26
+key 730     CUSTOM_27
+key 731     CUSTOM_28
+key 732     CUSTOM_29
+key 733     CUSTOM_30
+key 734     CUSTOM_31
+key 735     CUSTOM_32
+key 736     CUSTOM_33
+key 737     CUSTOM_34
+key 738     CUSTOM_35
+key 739     CUSTOM_36
+key 740     CUSTOM_37
+key 741     CUSTOM_38
+key 742     CUSTOM_39
+key 743     CUSTOM_40
+# 2020-12-12 Rick End

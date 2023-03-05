@@ -1,0 +1,128 @@
+#
+# import the specific rc
+#
+# e.g
+# import /vendor/etc/init/hw/init.hbg.rc
+#
+# 20210719 Jibin.Ge add for RC OTA
+import /vendor/etc/init/hw/init.firmware.rc
+
+
+#
+# on early-init
+#
+# e.g.
+# on early-init
+#     mount debugfs debugfs /sys/kernel/debug
+#
+
+
+
+#
+# on init
+#
+# e.g.
+# on init
+#     symlink /sdcard /mnt/sdcard
+#
+
+
+
+#
+# on fs
+#
+# e.g.
+# on fs
+#     mount_all /vendor/etc/fstab.m7642
+#
+
+
+
+#
+# on post-fs
+#
+# e.g.
+# on post-fs
+#     start console
+#
+
+
+#
+# on post-fs-data
+#
+# e.g.
+# on post-fs-data
+#     mkdir /data/system 0771 system system
+#
+
+
+
+#
+# on boot
+#
+# e.g.
+# on boot
+#     # create the coredump file
+#     write /proc/sys/kernel/core_pattern /var/coredump.%p.gz
+#
+
+
+
+#
+# on property:
+#
+# e.g.
+# # after launcher is displayed, trigger other drivers initialization
+# on property:init.svc.bootanim=stopped
+#
+
+
+
+#
+# on service:
+#
+# e.g.
+# # service for common wificond
+# service wificond /system/bin/wificond
+# class main
+# user wifi
+# group wifi net_raw net_admin
+#
+
+#20201209 lei.jin Begin
+service logservice /system/bin/sh /system/bin/logservice.sh
+    class main
+    user system
+    group system shell
+    console
+    disabled
+    oneshot
+    seclabel u:r:shell:s0
+#20201209 lei.jin End
+
+#20210125 lei.jin Begin
+#service netlimit /system/bin/sh /system/bin/netlimit.sh
+#    class main
+#    user root
+#    group root
+#    console
+#    oneshot
+#    seclabel u:r:ueventd:s0
+#20210125 lei.jin End
+
+# 20211020 Jimmy add for logcollect
+service logcollectser /system/bin/sh /system/bin/logcollection.sh
+    class main
+    console
+    user system
+    group shell system
+    disabled
+    oneshot
+    seclabel u:r:shell:s0
+
+on property:persist.sys.logcollect.debug=1
+    start logcollectser
+on property:persist.sys.logcollect.debug=0
+    stop logcollectser
+
+

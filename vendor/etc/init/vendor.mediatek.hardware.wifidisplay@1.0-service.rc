@@ -1,0 +1,4 @@
+service wifidisplay-hal-1-0 /vendor/bin/hw/vendor.mediatek.hardware.wifidisplay@1.0-service
+    class hal animation
+    user system
+    group system inet net_admin net_raw

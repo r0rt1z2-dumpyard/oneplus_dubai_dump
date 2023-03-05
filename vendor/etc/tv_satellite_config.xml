@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+scan_type
+	0 - network
+	1 - all
+
+sservice_type
+	0 - all
+	1 - digital
+	2 - radio
+
+channel_type
+	0 - all
+	1 - encrypted
+	2 - free
+
+lnb_power
+	0 - off
+	1 - on
+
+lnb_frequency_low
+	the range of input value is [9750,10600]
+
+lnb_frequency_high
+	the range of input value is [9750,10600]
+
+lnb_frequency_switch
+	the range of input value is [10700,10600]，default 11700
+
+tone22K
+	0 - off
+	1 - on
+	2 - auto
+
+tone_burst
+	0 - Tone Burst A
+	1 - Tone Burst B
+	2 - Disable
+
+diseqc10_port
+	0 - Disable
+	1 - DiSEqc A
+	2 - DiSEqc B
+	3 - DiSEqc C
+	4 - DiSEqc D
+
+diseqc11_port
+	0  - Disable
+	1  - Uncommit 1
+	2  - Uncommit 2
+	3  - Uncommit 3
+	4  - Uncommit 4
+	5  - Uncommit 5
+	6  - Uncommit 6
+	7  - Uncommit 7
+	8  - Uncommit 8
+	9  - Uncommit 9
+	10 - Uncommit 10
+	11 - Uncommit 11
+	12 - Uncommit 12
+	13 - Uncommit 13
+	14 - Uncommit 14
+	15 - Uncommit 15
+	16 - Uncommit 16
+
+unicableI_position
+	0 - A
+	1 - B
+
+unicableII_position
+	0 - A
+	1 - B
+	2 - C
+	3 - D
+	4 - E
+	5 - F
+	6 - G
+	7 - H
+
+transponder_frequency
+transponder_symbolrate
+transponder_epol
+	0 - H
+	1 - V
+	2 - L
+	3 - R
+
+-->
+
+<config>
+
+	<!--1-->
+	<satellite name="Astra4A/SES5 5E">
+		<sat_position>50</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>12054</transponder_frequency>
+		<transponder_symbolrate>27500</transponder_symbolrate>
+		<transponder_epol>1</transponder_epol>
+	</satellite>
+
+	<!--2-->
+	<satellite name="Eutelsat 7E">
+		<sat_position>70</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>11575</transponder_frequency>
+		<transponder_symbolrate>30000</transponder_symbolrate>
+		<transponder_epol>1</transponder_epol>
+	</satellite>
+
+	<!--3-->
+	<satellite name="Eutelsat 9E">
+		<sat_position>90</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>12073</transponder_frequency>
+		<transponder_symbolrate>27500</transponder_symbolrate>
+		<transponder_epol>1</transponder_epol>
+	</satellite>
+
+	<!--4-->
+	<satellite name="Hotbrid 13E">
+		<sat_position>130</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>11681</transponder_frequency>
+		<transponder_symbolrate>27500</transponder_symbolrate>
+		<transponder_epol>0</transponder_epol>
+	</satellite>
+
+	<!--5-->
+	<satellite name="Astra1 19.2E">
+		<sat_position>192</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>10774</transponder_frequency>
+		<transponder_symbolrate>22000</transponder_symbolrate>
+		<transponder_epol>0</transponder_epol>
+	</satellite>
+
+	<!--6-->
+	<satellite name="Astra3 23.5E">
+		<sat_position>235</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>12070</transponder_frequency>
+		<transponder_symbolrate>27500</transponder_symbolrate>
+		<transponder_epol>0</transponder_epol>
+	</satellite>
+
+	<!--7-->
+	<satellite name="Astra2 28.2E">
+		<sat_position>282</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>12168</transponder_frequency>
+		<transponder_symbolrate>29500</transponder_symbolrate>
+		<transponder_epol>1</transponder_epol>
+	</satellite>
+
+	<!--8-->
+	<satellite name="Eurobird 28.5E">
+		<sat_position>285</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>12168</transponder_frequency>
+		<transponder_symbolrate>29500</transponder_symbolrate>
+		<transponder_epol>1</transponder_epol>
+	</satellite>
+
+	<!--9-->
+	<satellite name="Eutelsat 36E">
+		<sat_position>360</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>12226</transponder_frequency>
+		<transponder_symbolrate>27500</transponder_symbolrate>
+		<transponder_epol>2</transponder_epol>
+	</satellite>
+
+	<!--10-->
+	<satellite name="Turksat 42E">
+		<sat_position>420</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>11844</transponder_frequency>
+		<transponder_symbolrate>2222</transponder_symbolrate>
+		<transponder_epol>1</transponder_epol>
+	</satellite>
+
+	<!--11-->
+	<satellite name="Express-AT1 56E">
+		<sat_position>560</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>12188</transponder_frequency>
+		<transponder_symbolrate>30000</transponder_symbolrate>
+		<transponder_epol>2</transponder_epol>
+	</satellite>
+
+	<!--12-->
+	<satellite name="85E">
+		<sat_position>850</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>12640</transponder_frequency>
+		<transponder_symbolrate>30000</transponder_symbolrate>
+		<transponder_epol>2</transponder_epol>
+	</satellite>
+
+	<!--13-->
+	<satellite name="140E">
+		<sat_position>1400</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>12188</transponder_frequency>
+		<transponder_symbolrate>30000</transponder_symbolrate>
+		<transponder_epol>2</transponder_epol>
+	</satellite>
+
+	<!--14-->
+	<satellite name="Thor 0.8W">
+		<sat_position>-8</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>11247</transponder_frequency>
+		<transponder_symbolrate>24500</transponder_symbolrate>
+		<transponder_epol>1</transponder_epol>
+	</satellite>
+
+	<!--15-->
+	<satellite name="Eutelsat 5W">
+		<sat_position>-50</sat_position>
+		<scan_type>1</scan_type>
+		<service_type>0</service_type>
+		<channel_type>0</channel_type>
+		<lnb_power>1</lnb_power>
+		<lnb_frequency_low>9750</lnb_frequency_low>
+		<lnb_frequency_high>10600</lnb_frequency_high>
+		<lnb_frequency_switch>11700</lnb_frequency_switch>
+		<tone22K>2</tone22K>
+		<tone_burst>2</tone_burst>
+		<diseqc10_port>0</diseqc10_port>
+		<diseqc11_port>0</diseqc11_port>
+		<unicableI_position>0</unicableI_position>
+		<unicableII_position>0</unicableII_position>
+		<transponder_frequency>11554</transponder_frequency>
+		<transponder_symbolrate>29950</transponder_symbolrate>
+		<transponder_epol>1</transponder_epol>
+	</satellite>
+</config>

@@ -1,0 +1,94 @@
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Generic key layout file for full alphabetic US English PC style external keyboards.
+#
+# This file is intentionally very generic and is intended to support a broad rang of keyboards.
+# Do not edit the generic key layout to support a specific keyboard; instead, create
+# a new key layout file with the required keyboard configuration.
+#
+
+key 2     BUTTON_1
+key 3     BUTTON_2
+key 4     BUTTON_3
+key 5     BUTTON_4
+key 6     BUTTON_5
+key 7     BUTTON_6
+key 8     BUTTON_7
+key 9     BUTTON_8
+key 10    BUTTON_9
+key 11    BUTTON_10
+key 52    PERIOD
+key 59    LAST_CHANNEL
+key 61    TV_TELETEXT
+key 62    MEDIA_AUDIO_TRACK
+key 63    CAPTIONS
+key 64    PERIOD
+key 74    STEM_2
+key 79    TV_INPUT
+key 87    STEM_1
+key 88    TV_INPUT_COMPOSITE_2
+key 103   DPAD_UP
+key 105   DPAD_LEFT
+key 106   DPAD_RIGHT
+key 108   DPAD_DOWN
+key 113   VOLUME_MUTE
+key 114   VOLUME_DOWN
+key 115   VOLUME_UP
+key 116   POWER
+key 119   MEDIA_PAUSE
+key 128   MEDIA_STOP
+key 138   GUIDE
+key 139   MENU
+key 150   PROG_RED
+key 158   BACK
+key 163   MEDIA_NEXT
+key 164   MEDIA_PLAY_PAUSE
+key 165   MEDIA_PREVIOUS
+key 166   MEDIA_STOP
+key 167   MEDIA_RECORD
+key 168   MEDIA_REWIND
+key 169   PROG_YELLOW
+key 172   HOME
+key 174   TV
+key 183   TV_INPUT_COMPONENT_2
+key 184   EISU
+key 207   MEDIA_PLAY
+key 208   MEDIA_FAST_FORWARD
+key 212   TV_INPUT_VGA_1
+key 217   VOICE_ASSIST
+key 353   DPAD_CENTER
+key 358   INFO
+key 362   PROG_BLUE
+key 370   CAPTIONS
+key 372   PAIRING
+key 376   TV_INPUT
+key 377   STEM_3
+key 379   MUHENKAN
+#key 383  AD
+key 384   STEM_1
+key 386   TV_INPUT_COMPOSITE_2
+key 389   PROG_GREEN
+key 396   TV_TELETEXT
+key 398   PROG_RED
+key 399   PROG_GREEN
+key 400   PROG_YELLOW
+key 401   PROG_BLUE
+key 402   CHANNEL_UP
+key 403   CHANNEL_DOWN
+key 416   YEN
+#key 417  FAV
+key 392   MUHENKAN
+key 580   ALL_APPS

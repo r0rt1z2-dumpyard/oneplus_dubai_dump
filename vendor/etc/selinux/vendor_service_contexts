@@ -1,0 +1,8 @@
+#line 1 "device/google/atv/sepolicy/service_contexts"
+tv_remote                                 u:object_r:tv_remote_service:s0
+display.qservice                          u:object_r:surfaceflinger_service:s0
+tvapisvc                                  u:object_r:tvapisvc_service:s0
+#line 1 "system/sepolicy/reqd_mask/service_contexts"
+# empty service_contexts file - this file is used to generate an empty
+# non-platform service_context for devices without any service_contexts
+# customizations.

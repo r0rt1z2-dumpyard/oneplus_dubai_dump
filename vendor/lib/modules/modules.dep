@@ -1,0 +1,27 @@
+/vendor/lib/modules/mik.ko: /vendor/lib/modules/mwgifker.ko /vendor/lib/modules/misck.ko /vendor/lib/modules/iniparser.ko /vendor/lib/modules/xcker.ko /vendor/lib/modules/hdcp2x.ko /vendor/lib/modules/hdcp1x.ko /vendor/lib/modules/utpa2k.ko /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/misck.ko: /vendor/lib/modules/iniparser.ko /vendor/lib/modules/utpa2k.ko /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/mali_kbase.ko:
+/vendor/lib/modules/hdcp2x.ko: /vendor/lib/modules/utpa2k.ko /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/mtk_lmkd.ko:
+/vendor/lib/modules/dtv_driver.ko: /vendor/lib/modules/mik.ko /vendor/lib/modules/mwgifker.ko /vendor/lib/modules/misck.ko /vendor/lib/modules/iniparser.ko /vendor/lib/modules/xcker.ko /vendor/lib/modules/hdcp2x.ko /vendor/lib/modules/hdcp1x.ko /vendor/lib/modules/utpa2k.ko /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/mwgifker.ko: /vendor/lib/modules/utpa2k.ko /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/ehci-hcd.ko:
+/vendor/lib/modules/kdrv_platform.ko:
+/vendor/lib/modules/mtprealloc_mt7668.ko:
+/vendor/lib/modules/iniparser.ko:
+/vendor/lib/modules/wlan_mt7668.ko: /vendor/lib/modules/cfg80211.ko /vendor/lib/modules/firmware_class.ko /vendor/lib/modules/mtprealloc_mt7663.ko
+/vendor/lib/modules/btmtk_usb.ko: /vendor/lib/modules/firmware_class.ko
+/vendor/lib/modules/mstar_fbdev_mi.ko: /vendor/lib/modules/mik.ko /vendor/lib/modules/mwgifker.ko /vendor/lib/modules/misck.ko /vendor/lib/modules/iniparser.ko /vendor/lib/modules/xcker.ko /vendor/lib/modules/hdcp2x.ko /vendor/lib/modules/hdcp1x.ko /vendor/lib/modules/utpa2k.ko /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/devnode.ko:
+/vendor/lib/modules/phy-ms-usb.ko: /vendor/lib/modules/ehci-hcd.ko
+/vendor/lib/modules/hdcp1x.ko: /vendor/lib/modules/utpa2k.ko /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/wlan_mt7663.ko: /vendor/lib/modules/cfg80211.ko /vendor/lib/modules/firmware_class.ko /vendor/lib/modules/mtprealloc_mt7663.ko
+/vendor/lib/modules/kheaders.ko:
+/vendor/lib/modules/xcker.ko: /vendor/lib/modules/hdcp2x.ko /vendor/lib/modules/hdcp1x.ko /vendor/lib/modules/utpa2k.ko /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/kdrv_alg.ko: /vendor/lib/modules/kdrv_platform.ko /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/firmware_class.ko:
+/vendor/lib/modules/cfg80211.ko: /vendor/lib/modules/firmware_class.ko
+/vendor/lib/modules/mtprealloc_mt7663.ko:
+/vendor/lib/modules/utpa2k.ko: /vendor/lib/modules/kdrv_xc.ko
+/vendor/lib/modules/udc-msb250x.ko:
+/vendor/lib/modules/kdrv_xc.ko:

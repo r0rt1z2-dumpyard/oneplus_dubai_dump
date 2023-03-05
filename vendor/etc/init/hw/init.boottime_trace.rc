@@ -1,0 +1,35 @@
+on early-init
+    write /proc/boottime "init:on early-init"
+
+on init
+    write /proc/boottime "init:on init"
+
+on late-init
+    write /proc/boottime "init:on late-init"
+
+on early-fs
+    write /proc/boottime "init:on early-fs"
+
+on fs
+    write /proc/boottime "init:on fs"
+
+on post-fs
+    write /proc/boottime "init:on post-fs"
+
+on post-fs-data
+    write /proc/boottime "init:on post-fs-data"
+
+on zygote-start
+    write /proc/boottime "init:on zygote-start"
+
+on property:init.svc.zygote=running
+    write /proc/boottime "init:on init.svc.zygote=running"
+
+on early-boot
+    write /proc/boottime "init:on early-boot"
+
+on boot
+    write /proc/boottime "init:on boot"
+
+on property:sys.boot_completed=1
+    write /proc/boottime "init:on sys.boot_completed=1"

@@ -1,0 +1,7 @@
+# cpu_audio service
+service cpu-audio /vendor/bin/sh /vendor/bin/cpu_audio.sh
+    class main
+    console
+    oneshot
+    seclabel u:r:mt_cpu_audio-svc:s0
+

@@ -1,0 +1,6 @@
+service vendor.power-mediatek /vendor/bin/hw/mediatek.hardware.power-service
+    class hal
+    user system
+    group system wakelock input
+    capabilities BLOCK_SUSPEND SYS_BOOT
+    file /dev/kmsg w

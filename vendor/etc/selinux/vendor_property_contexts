@@ -1,0 +1,377 @@
+#line 1 "vendor/oneplus/system/sepolicy/common/property_contexts"
+##########################
+# vendor properties
+#
+
+## all vendor properties MUST start with prefix in
+# 1) persist.vendor.                        // property value could be saved, even system reboot
+# 2) ro.vendor.                             // write-once properties, by vendor-init
+# 3) vendor.                                // properties are read-writable in multiple times
+
+## and, the names of property contexts of Vendor (or odm) properties MUST start with vendor_ or odm_.
+
+
+## vendor_build_info_prop
+ro.vendor.build.op.fingerprint.datetime             u:object_r:vendor_build_info_prop:s0
+ro.vendor.build.op.firmware.version                 u:object_r:vendor_build_info_prop:s0
+ro.vendor.build.op.ota.versionname                  u:object_r:vendor_build_info_prop:s0
+ro.vendor.build.op.soft.majorversion                u:object_r:vendor_build_info_prop:s0
+ro.vendor.build.op.soft.version                     u:object_r:vendor_build_info_prop:s0
+ro.vendor.build.op.version.ota                      u:object_r:vendor_build_info_prop:s0
+
+#line 1 "vendor/mediatek/proprietary_tv/open/system/sepolicy/property_contexts"
+##########################
+# vendor properties
+#
+
+## all vendor properties MUST start with prefix in
+# 1) persist.vendor.                        // property value could be saved, even system reboot
+# 2) ro.vendor.                             // write-once properties, by vendor-init
+# 3) vendor.                                // properties are read-writable in multiple times
+
+## and, the names of property contexts of Vendor (or odm) properties MUST start with vendor_ or odm_.
+
+
+## vendor defined default_prop ========================================================= START ##
+# vendor_bluetooth_default_prop
+persist.vendor.bluetooth.                   u:object_r:vendor_bluetooth_default_prop:s0
+persist.vendor.bt.                          u:object_r:vendor_bluetooth_default_prop:s0
+
+# vendor_camera_default_prop
+ro.vendor.camera.                           u:object_r:vendor_camera_default_prop:s0
+
+# vendor_hdmi_default_prop
+ro.vendor.hdmi.                             u:object_r:vendor_hdmi_default_prop:s0
+
+# vendor_mstar_default_prop
+persist.vendor.mstar.                       u:object_r:vendor_mstar_default_prop:s0
+ro.vendor.mstar.                            u:object_r:vendor_mstar_default_prop:s0
+vendor.mstar.                               u:object_r:vendor_mstar_default_prop:s0
+
+# vendor_mtk_default_prop
+persist.vendor.mtk.                         u:object_r:vendor_mtk_default_prop:s0
+ro.vendor.mtk.                              u:object_r:vendor_mtk_default_prop:s0
+vendor.mtk.                                 u:object_r:vendor_mtk_default_prop:s0
+
+# vendor_nfx_default_prop
+ro.vendor.nrdp.                             u:object_r:vendor_nfx_default_prop:s0
+vendor.nrdp.                                u:object_r:vendor_nfx_default_prop:s0
+
+# vendor_system_default_prop
+persist.vendor.sys.                         u:object_r:vendor_system_default_prop:s0
+ro.vendor.sys.                              u:object_r:vendor_system_default_prop:s0
+vendor.sys.                                 u:object_r:vendor_system_default_prop:s0
+## vendor defined default_prop =========================================================== END ##
+
+# vendor_audio_prop
+persist.vendor.audio.service.hwbinder.size_kbyte        u:object_r:vendor_audio_prop:s0
+vendor.debug.audio.log                                  u:object_r:vendor_audio_prop:s0
+vendor.dump.audio.before.parser.on                      u:object_r:vendor_audio_prop:s0
+
+# vendor_bt_prop
+vendor.bt.latency                                       u:object_r:vendor_bt_prop:s0
+
+# vendor_camera_prop
+ro.vendor.camera.external.hal3TrebleMinorVersion        u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.hal32.support                          u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.support                                u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.wrapper.hal3TrebleMinorVersion         u:object_r:vendor_camera_prop:s0
+vendor.camera.drop.frame.num                            u:object_r:vendor_camera_prop:s0
+vendor.camera.dump.data                                 u:object_r:vendor_camera_prop:s0
+vendor.camera.exposure                                  u:object_r:vendor_camera_prop:s0
+vendor.camera.fps                                       u:object_r:vendor_camera_prop:s0
+vendor.camera.measure.time                              u:object_r:vendor_camera_prop:s0
+
+# vendor_display_prop
+vendor.display-size                                     u:object_r:vendor_display_prop:s0
+
+# vendor_debug_prop
+vendor.asfparser.verbose.log                            u:object_r:vendor_debug_prop:s0
+
+# vendor_mstar_audio_prop
+vendor.mstar.audio.aec.bypass                           u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.debug.hal                        u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.debug.input                      u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.dump.aec.out.name                u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.dump.enable                      u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.dump.mic.pos.name                u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.dump.mic.pre.name                u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.dump.path                        u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.dump.ref.pos.name                u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.dump.ref.pre.name                u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.level                            u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.mic.gain                         u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.mic.map                          u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.mono                             u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.output.gain                      u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.aec.ref.gain                         u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.debug.pcm.limit                      u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.direct.block.time.max                u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.direct.block.time.min                u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.dma.blocking                         u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.dump.hal                             u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.dump.hal.header                      u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.log.level                            u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audio.mmap.time.offset                     u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.audioparser.log.level                      u:object_r:vendor_mstar_audio_prop:s0
+vendor.mstar.primary.audioHAL.                          u:object_r:vendor_mstar_audio_prop:s0
+
+# vendor_mstar_debug_prop
+vendor.mstar.dump.layerbuffer                           u:object_r:vendor_mstar_debug_prop:s0 exact string
+vendor.mstar.voc.dump                                   u:object_r:vendor_mstar_debug_prop:s0
+
+# vendor_mstar_display_prop
+vendor.mstar.4k2k.2k1k.coexist                          u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.cap.framerate                              u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.capture.720p                               u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.close.bootlogo.gop.frame                   u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.debug.hwc.cap                              u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.debug.hwcomposer20                         u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.debugEx.hwcomposer20                       u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.desk-display-mode                          u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.desk-enable-gamecursor                     u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.desk-enable-hwcursor                       u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.detile.yuv.time                            u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.dip.log                                    u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.disable.dipcmdq                            u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.disable.ds                                 u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.disable.osd                                u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.dummy.surfaceview                          u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.dump.hwcfb                                 u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.dump.layerbuffer                           u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.enable.sub.ds                              u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.fake.vsync.enable                          u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.fakevsync.freq                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.force.video.rotation                       u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.force.zoom.in                              u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.framebuffer.format                         u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.gpumfdec.log                               u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.horizontalDegree                           u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.hwc.framebuffer.format                     u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.hwc.glcomposite                            u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.lvds-off                                   u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.maliion.clear.memory                       u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.maliion.conmem.location                    u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.maliion.default.heap                       u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.maliion.dismem.location                    u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.malimma.disable                            u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.mfdec.dump                                 u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.mi.hwcursor.gop                            u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.osd_size                                   u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.overlayrolling                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.override.refresh.rate                      u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.pointAoffset_x                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.pointAoffset_y                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.pointBoffset_x                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.pointBoffset_y                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.pointCoffset_x                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.pointCoffset_y                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.pointDoffset_x                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.pointDoffset_y                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.redraw.hwcfb                               u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.resolutionState                            u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.rotation.angle                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.sf.lcd.density                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.show.cap.fps                               u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.sideband.log                               u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.support.video.rotation                     u:object_r:vendor_mstar_display_prop:s0 exact string
+vendor.mstar.trapezoidCorrect.type                      u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.user.xdpi                                  u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.user.ydpi                                  u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.vb.disable.dms.info.log                    u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.vb.flip                                    u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.vb.step_mode                               u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.vb.step_on                                 u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.verticalDegree                             u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.video.gpu.render                           u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.video.withoutlayer                         u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.vsync_bridge.log                           u:object_r:vendor_mstar_display_prop:s0
+vendor.mstar.vsync.mode                                 u:object_r:vendor_mstar_display_prop:s0
+
+# vendor_mstar_media_prop
+vendor.ms.adec.log_on                                   u:object_r:vendor_mstar_media_prop:s0
+vendor.ms.mstplayer.                                    u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.4K.set.ui.fps                              u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.fade.in.time                               u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.force.audio.framing                        u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.frame.dir                                  u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.frame.dump                                 u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.frame.on                                   u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.frame.scale                                u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.main.decode.4k_thumbnail                   u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.media.                                     u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.media.adec.dump_es                         u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.media.adec.dump_pcm                        u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.media.vdec.reset                           u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.media.vdec.streamId                        u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.media.venc.dump                            u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.media.venc.log                             u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.media.videotalk                            u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.mfdec.dump.frame.buffer                    u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.mi.video.log                               u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.multi.decoder                              u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.omx.log                                    u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.omx.wait.framedone                         u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.render.planar                              u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.stream.dir                                 u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.stream.dump                                u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.stream.file                                u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.stream.flush                               u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.stream.play                                u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.stream.raw                                 u:object_r:vendor_mstar_media_prop:s0
+vendor.mstar.venc.dump                                  u:object_r:vendor_mstar_media_prop:s0
+
+# vendor_mstar_vdec_prop
+vendor.mstar.msvdec.log                                 u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.bwmask                                u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.dip.mfdec.disable                     u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.disable_delayfree                     u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.disable_hevc_10bits                   u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.disable_mfcodec                       u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.errtolerance                          u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.fbext                                 u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.force_evd_fhd_level5                  u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.frame_drop                            u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.gpu.mfdec.disable                     u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.log                                   u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.main_one                              u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.md5                                   u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.nal                                   u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.pseudo_10bits                         u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.reverse_main_sub                      u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.stop.at                               u:object_r:vendor_mstar_vdec_prop:s0
+vendor.mstar.vdec.tryfbsize                             u:object_r:vendor_mstar_vdec_prop:s0
+
+# vendor_mtk_aipq_prop
+ro.vendor.mtk.aipq.enable                               u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.                                        u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.anime                                   u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.arch                                    u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.demoapk.connect                         u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.face                                    u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.food                                    u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.green                                   u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.movie                                   u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.object(\d{2})$                          u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.sky                                     u:object_r:vendor_mtk_aipq_prop:s0
+vendor.mtk.aipq.time                                    u:object_r:vendor_mtk_aipq_prop:s0
+
+# vendor_mtk_display_prop
+vendor.mtk.disable.layer.afbc                           u:object_r:vendor_mtk_display_prop:s0
+vendor.mtk.enable.framebuffer.afbc                      u:object_r:vendor_mtk_display_prop:s0
+
+# vendor_mtk_livetv_prop
+ro.vendor.mtk.auto.enter.livetv                         u:object_r:vendor_mtk_livetv_prop:s0
+ro.vendor.mtk.epg.1d                                    u:object_r:vendor_mtk_livetv_prop:s0
+ro.vendor.mtk.epg.existed                               u:object_r:vendor_mtk_livetv_prop:s0
+ro.vendor.mtk.funcs.key.existed                         u:object_r:vendor_mtk_livetv_prop:s0
+ro.vendor.mtk.poweron.unmute                            u:object_r:vendor_mtk_livetv_prop:s0
+ro.vendor.mtk.samba.acr                                 u:object_r:vendor_mtk_livetv_prop:s0
+ro.vendor.mtk.setup.audtrack.existed                    u:object_r:vendor_mtk_livetv_prop:s0
+vendor.mtk.livetv.msgq.debug                            u:object_r:vendor_mtk_livetv_prop:s0 exact int
+vendor.mtk.livetv.ready                                 u:object_r:vendor_mtk_livetv_prop:s0
+vendor.mtk.tif.dvr                                      u:object_r:vendor_mtk_livetv_prop:s0
+vendor.mtk.tif.fvp                                      u:object_r:vendor_mtk_livetv_prop:s0
+vendor.mtk.tif.timeshift                                u:object_r:vendor_mtk_livetv_prop:s0
+vendor.mtk.tshift.disk.setup.testing                    u:object_r:vendor_mtk_livetv_prop:s0 exact int
+
+# vendor_mtk_media_prop
+vendor.mtk.remove.dv.profile                            u:object_r:vendor_mtk_media_prop:s0
+vendor.mtk.remove.hdr.profile                           u:object_r:vendor_mtk_media_prop:s0
+vendor.mtkmmp.use.net                                   u:object_r:vendor_mtk_media_prop:s0
+
+# vendor_mtk_net_dns_prop
+vendor.mtk.net.dns1                                     u:object_r:vendor_mtk_net_dns_prop:s0
+vendor.mtk.net.dns2                                     u:object_r:vendor_mtk_net_dns_prop:s0
+vendor.mtk.net.dns3                                     u:object_r:vendor_mtk_net_dns_prop:s0
+vendor.mtk.net.dns4                                     u:object_r:vendor_mtk_net_dns_prop:s0
+
+# vendor_mtk_net_wowl_on_prop
+vendor.mtk.sys.net.wowl_on                              u:object_r:vendor_mtk_net_wowl_on_prop:s0
+
+# vendor_mtk_omx_prop
+vendor.mtk.omx.hevc.continuous.skip.err.count           u:object_r:vendor_mtk_omx_prop:s0
+
+# vendor_mtk_rm_prop
+vendor.mtk.grm.displaybuffer.num                        u:object_r:vendor_mtk_rm_prop:s0
+vendor.mtk.grm.videodecoder.num                         u:object_r:vendor_mtk_rm_prop:s0
+
+# vendor_mtk_system_prop
+ro.vendor.mtk.sys_driver_only                           u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.audiosync                          u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.autosleep.existed                  u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.autosleep.value                    u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.av_record_lib                      u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.biss.key.existed                   u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.blue.mute.existed                  u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.cec.hal                            u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.ci.existed                         u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.diseqcip.existed                   u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.divx.existed                       u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.dualtuner                          u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.dvbs.existed                       u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.eu.col                             u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.eu.diseqc                          u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.eu.hk                              u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.eu.oceania                         u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.eu.pa                              u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.eu.taiwan                          u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.ews.isdb                           u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.ews.support                        u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.ginga.existed                      u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.hbbtv.existed                      u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.interaction.existed                u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.marketregion                       u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.mheg5.existed                      u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.oad.existed                        u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.one.image                          u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.pa.dvbs                            u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.power.on.channel.existed           u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.record.setting.existed             u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.sep.dtv.atv                        u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.subtitle.existed                   u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.timesync.existed                   u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.ttx.existed                        u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.system.vss.existed                        u:object_r:vendor_mtk_system_prop:s0
+ro.vendor.mtk.twoworlds                                 u:object_r:vendor_mtk_system_prop:s0
+vendor.mtk.auto_test                                    u:object_r:vendor_mtk_system_prop:s0
+vendor.mtk.bootvideofilepath                            u:object_r:vendor_mtk_system_prop:s0
+vendor.mtk.build.mtktv                                  u:object_r:vendor_mtk_system_prop:s0
+vendor.mtk.factory.disable.input                        u:object_r:vendor_mtk_system_prop:s0
+vendor.mtk.inside                                       u:object_r:vendor_mtk_system_prop:s0
+vendor.mtk.mjc                                          u:object_r:vendor_mtk_system_prop:s0
+vendor.mtk.running.application                          u:object_r:vendor_mtk_system_prop:s0
+vendor.mtk.tma.enable                                   u:object_r:vendor_mtk_system_prop:s0
+
+# vendor_nfx_modelgroup_prop
+ro.vendor.nrdp.modelgroup                               u:object_r:vendor_nfx_modelgroup_prop:s0
+
+# vendor_nfx_misc_prop
+vendor.nrdp.suppress-notification                       u:object_r:vendor_nfx_misc_prop:s0
+
+# vendor_nfx_validation_prop
+ro.vendor.nrdp.validation                               u:object_r:vendor_nfx_validation_prop:s0
+
+# vendor_rm_prop
+ro.vendor.rm.vdec.num                                   u:object_r:vendor_rm_prop:s0
+
+# vendor_system_prop
+persist.vendor.sys.alphonso.acr                         u:object_r:vendor_system_prop:s0 exact string
+persist.vendor.sys.alphonso.acr.recommendations         u:object_r:vendor_system_prop:s0 exact string
+ro.vendor.config.ts.date.time                           u:object_r:vendor_system_prop:s0
+ro.vendor.config.tv_advanced_settings                   u:object_r:vendor_system_prop:s0
+ro.vendor.customer.software.version                     u:object_r:vendor_system_prop:s0
+ro.vendor.modelname                                     u:object_r:vendor_system_prop:s0
+ro.vendor.odm.name                                      u:object_r:vendor_system_prop:s0
+ro.vendor.oemname                                       u:object_r:vendor_system_prop:s0
+ro.vendor.sys.alphonso.acr                              u:object_r:vendor_system_prop:s0
+ro.vendor.sys.model                                     u:object_r:vendor_system_prop:s0
+ro.vendor.sys.samba.acr                                 u:object_r:vendor_system_prop:s0
+ro.vendor.sys.year                                      u:object_r:vendor_system_prop:s0
+
+# vendor_usb_prop
+vendor.usb.latency                                      u:object_r:vendor_usb_prop:s0
+#line 1 "system/sepolicy/reqd_mask/property_contexts"
+# empty property_contexts file - this file is used to generate an empty
+# non-platform property context for devices without any property_contexts
+# customizations.

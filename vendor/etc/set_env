@@ -1,0 +1,34 @@
+# <- this is for comment / total file size must be less than 4KB
+# Kernel protect is automatically done by mboot
+
+# Boot from RamDisk.
+setenv bootargs console
+saveenv
+setenv bootargs console=ttyS0,115200 androidboot.console=ttyS0 init=/init CORE_DUMP_PATH=/data/core_dump.%%p.gz KDebug=1 delaylogo=true security=selinux platform=sn SD_CONFIG=2 tee_mode=optee pm_path=/tvconfig/config/PM.bin loop.max_part=7
+setenv bootlogo_gopidx 2
+setenv GOP_SET_MUX 1:0:2:3
+setenv bootlogo_buffer E_MMAP_ID_BOOTLOGO_BUFFER
+# setenv OSD_BufferAddr E_MMAP_ID_JPD_WRITE_ADR
+setenv str_crc 2
+setenv db_table 0
+setenv verify n
+setenv WDT_ENABLE 1
+setenv sync_mmap 1
+setenv CONFIG_PATH /vendor/tvconfig/config
+setenv mboot_default_env 0
+setenv MAP_TYPE MI
+setenv MI_MAP_PARTITION tvconfig
+setenv MI_MAP_PATH config/MMAP_MI.h
+setenv bootlogo_buffer
+setenv close_log yes
+setenv adb_enable 0
+setenv optv_factory_mode
+setenv optv_aging_mode
+setenv factory_poweron_mode secondary
+setenv uart2hdmi off
+saveenv
+ac loglevel 3
+ac vmpressure_level_critical 80
+ac cgroup.memory nokmem
+ac utpa_str_fr 1
+ac vmalloc 550M

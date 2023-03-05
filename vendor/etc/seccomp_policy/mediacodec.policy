@@ -1,0 +1,10 @@
+# device specific syscalls
+sendto: 1
+recvfrom: 1
+
+# For MI3.0 MI_SYS_Init
+epoll_create: 1
+epoll_create1: 1
+epoll_ctl: 1
+epoll_pwait: 1
+dup3: 1

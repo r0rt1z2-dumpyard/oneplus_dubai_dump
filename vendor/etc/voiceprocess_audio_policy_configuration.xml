@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Voiceprocess Audio HAL Audio Policy Configuration file -->
+<module name="voiceprocess" halVersion="3.0">
+    <attachedDevices>
+        <item>Built-In Mic</item>
+    </attachedDevices>
+    <mixPorts>
+        <mixPort name="voiceprocess input" role="sink">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="16000"
+                     channelMasks="AUDIO_CHANNEL_IN_MONO"/>
+        </mixPort>
+    </mixPorts>
+    <devicePorts>
+        <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source">
+           <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    samplingRates="16000"
+                    channelMasks="AUDIO_CHANNEL_IN_MONO"/>
+            </devicePort>
+        </devicePorts>
+    <routes>
+        <route type="mix" sink="voiceprocess input"
+               sources="Built-In Mic"/>
+    </routes>
+</module>

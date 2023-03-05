@@ -1,0 +1,18 @@
+#! /bin/sh
+
+echo "Running rc.local..."
+
+stty -F /dev/ttyS0 115200
+
+mkdir /mnt/vendor/tmp/mnt
+touch /mnt/vendor/tmp/resolv.conf
+touch /data/vendor/3rd_rw/dhcp_server
+echo "127.0.0.1 localhost.localdomain localhost" > /mnt/vendor/tmp/hosts
+
+ifconfig lo 127.0.0.1
+#busybox nohup /sbin/netinfd >/dev/null 2>&1 &
+#ifconfig eth0 down; ifconfig eth0 hw ether 00:00:00:00:ff:51; ifconfig eth0 up && udhcpc&
+
+if [ -f /etc/sysctl.conf ];then
+    sysctl -p /etc/sysctl.conf
+fi

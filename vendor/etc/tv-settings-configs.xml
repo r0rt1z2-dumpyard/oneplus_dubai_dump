@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <customer name="mtk">
+        <item name="sound_effects">
+            <pref>sound_effects</pref>
+            <pref>surround_passthrough</pref>
+            <pref>sound_style</pref>
+            <pref>sound_balance</pref>
+            <pref>sound_bass</pref>
+            <pref>sound_treble</pref>
+            <pref>sound_sound_surround</pref>
+            <pref>sound_equalizer_detail</pref>
+            <pref>sound_speakers</pref>
+			<pref>sound_speaker_delay</pref>
+            <pref>sound_spdif_type</pref>
+            <pref>sound_spdif_delay</pref>
+            <pref>sound_auto_volume_control</pref>
+            <pref>sound_downmixmode</pref>
+			<pref>sound_dts_drc</pref>
+            <pref>sound_sonic_emotion_premium</pref>
+            <pref>sound_digital_output</pref>
+            <pref>sound_dbx</pref>
+            <pref>sound_dap</pref>
+            <pref>sound_dts</pref>
+			<pref>sound_dts_studio</pref>
+            <pref>sound_reset_to_default</pref>
+        </item>
+        <item name ="sound_equalizer_detail">
+            <pref>sound_equalizer_detail_120hz</pref>
+            <pref>sound_equalizer_detail_500hz</pref>
+            <pref>sound_equalizer_detail_1500hz</pref>
+            <pref>sound_equalizer_detail_5000hz</pref>
+            <pref>sound_equalizer_detail_10000hz</pref>
+        </item>
+
+        <item name="sound_sonic_emotion_premium">
+          <pref>sound_sonic_emotion</pref>
+          <pref>sound_dialog_enhancement</pref>
+          <pref>sound_bass_enhancement</pref>
+          <pref>sound_absolute_3d_sound</pref>
+        </item>
+
+        <item name="sound_dbx">
+            <pref>sound_dbx_enable</pref>
+            <pref>sound_dbx_total_sonic</pref>
+            <pref>sound_dbx_total_vol</pref>
+            <pref>sound_dbx_total_surround</pref>
+        </item>
+
+        <item name="sound_dap">
+            <pref>sound_advanced_dolby_ap</pref>
+            <pref>sound_advanced_sound_mode</pref>
+            <pref>sound_advanced_volume_leveler</pref>
+            <pref>sound_advanced_dialogue_enhancer</pref>
+            <pref>sound_advanced_surround_virtualizer</pref>
+            <pref>sound_advanced_dolby_atmos</pref>
+        </item>
+
+		<item name="sound_dts_studio">
+			<pref>sound_dts_studio_enable</pref>
+			<pref>sound_dts_studio_surround</pref>
+			<pref>sound_dts_studio_truevolume</pref>
+		</item>
+
+        <item name="picture_effects">
+            <pref>picture_mode</pref>
+            <pref>picture_backlight</pref>
+            <pref>picture_brightness</pref>
+            <pref>picture_contrast</pref>
+            <pref>picture_saturation</pref>
+            <pref>picture_hue</pref>
+            <pref>picture_sharpness</pref>
+            <pref>picture_gamma</pref>
+            <pref>picture_color_temperature</pref>
+            <pref>picture_list_hdr</pref>
+            <pref>picture_format</pref>
+            <pref>picture_advanced_video</pref>
+            <pref>picture_color_tune</pref>
+            <pref>picture_white_balance11</pref>
+            <pref>picture_vga</pref>
+            <pref>picture_reset_to_default</pref>
+        </item>
+
+        <item name="advanced_video">
+            <pref>tv_picture_advance_video_dnr</pref>
+            <pref>tv_picture_advance_video_mpeg_nr</pref>
+            <pref>tv_picture_video_maxvivid</pref>
+            <pref>tv_picture_video_adaptive_luma_control</pref>
+            <pref>tv_picture_video_local_contrast_control</pref>
+            <pref>tv_picture_video_dynamic_contrast</pref>
+            <pref>tv_picture_video_di_film_mode</pref>
+            <pref>tv_picture_video_blue_stretch</pref>
+            <pref>tv_picture_video_game_mode</pref>
+			<pref>tv_picture_video_allm</pref>
+            <pref>tv_picture_video_pc_mode</pref>
+			<pref>tv_picture_video_de_counter</pref>
+			<pref>tv_picture_advanced_video_MJC</pref>
+            <pref>tv_picture_video_macro_dimming_comp</pref>
+            <pref>tv_picture_video_hdmi_rgb_range</pref>
+			<pref>tv_picture_video_low_bluelight</pref>
+        </item>
+
+        <item name="picture_color_tune">
+            <pref>tv_picture_color_tune_enable</pref>
+            <pref>tv_picture_color_tune_hue</pref>
+            <pref>tv_picture_color_tune_saturation</pref>
+            <pref>tv_picture_color_tune_brightness</pref>
+            <pref>tv_picture_color_tune_offset</pref>
+            <pref>tv_picture_color_tune_gain</pref>
+        </item>
+        <item name="picture_color_tune_hue">
+            <pref>tv_picture_color_tune_hue_red</pref>
+            <pref>tv_picture_color_tune_hue_green</pref>
+            <pref>tv_picture_color_tune_hue_blue</pref>
+            <pref>tv_picture_color_tune_hue_cvan</pref>
+            <pref>tv_picture_color_tune_hue_megenta</pref>
+            <pref>tv_picture_color_tune_hue_yellow</pref>
+            <pref>tv_picture_color_tune_hue_flesh_tone</pref>
+        </item>
+        <item name="picture_color_tune_saturation">
+            <pref>tv_picture_color_tune_saturation_red</pref>
+            <pref>tv_picture_color_tune_saturation_green</pref>
+            <pref>tv_picture_color_tune_saturation_blue</pref>
+            <pref>tv_picture_color_tune_saturation_cvan</pref>
+            <pref>tv_picture_color_tune_saturation_megenta</pref>
+            <pref>tv_picture_color_tune_saturation_yellow</pref>
+            <pref>tv_picture_color_tune_saturation_flesh_tone</pref>
+        </item>
+        <item name="picture_color_tune_brightness">
+            <pref>tv_picture_color_tune_brightness_red</pref>
+            <pref>tv_picture_color_tune_brightness_green</pref>
+            <pref>tv_picture_color_tune_brightness_blue</pref>
+            <pref>tv_picture_color_tune_brightness_cvan</pref>
+            <pref>tv_picture_color_tune_brightness_megenta</pref>
+            <pref>tv_picture_color_tune_brightness_yellow</pref>
+            <pref>tv_picture_color_tune_brightness_flesh_tone</pref>
+        </item>
+        <item name="picture_color_tune_offset">
+            <pref>tv_picture_color_tune_offset_red</pref>
+            <pref>tv_picture_color_tune_offset_green</pref>
+            <pref>tv_picture_color_tune_offset_blue</pref>
+        </item>
+        <item name="picture_color_tune_gain">
+            <pref>tv_picture_color_tune_gain_red</pref>
+            <pref>tv_picture_color_tune_gain_green</pref>
+            <pref>tv_picture_color_tune_gain_blue</pref>
+        </item>
+        <item name="picture_white_balance11">
+            <pref>picture_white_balance11_enable</pref>
+            <pref>picture_white_balance11_gain</pref>
+            <pref>picture_white_balance11_red</pref>
+            <pref>picture_white_balance11_green</pref>
+            <pref>picture_white_balance11_blue</pref>
+        </item>
+        <item name="picture_vga">
+		    <pref>picture_vga_auto</pref>
+		    <pref>picture_vga_hp</pref>
+		    <pref>picture_vga_vp</pref>
+		    <pref>picture_vga_phase</pref>
+		    <pref>picture_vga_clock</pref>
+		</item>
+        <item name="device_retail">
+            <pref>RetailModeEnable</pref>
+            <pref>RetailMessaging</pref>
+            <pref>RetailDemo</pref>
+        </item>
+        <item name="device_inputs">
+            <pref>tv_input_hdmi_edid_version</pref>
+            <pref>cec_dev_list</pref>
+        </item>
+        <item name="accessibility">
+            <pref>audio_description</pref>
+            <pref>hearing_impaired</pref>
+            <pref>visually_impaired</pref>
+            <pref>ac4_de</pref>
+        </item>
+        <item name="device_acc_visually">
+            <pref>visually_speaker</pref>
+            <pref>visually_headphone</pref>
+            <pref>visually_volume</pref>
+            <pref>visually_pane_fade</pref>
+            <pref>visually_impaired_audio</pref>
+            <pref>visually_fader_control</pref>
+        </item>
+        <item name="common_misc">
+            <pref>netflix_esn_key</pref>
+            <pref>network_wow</pref>
+            <pref>network_wol</pref>
+            <pref>hdmi2_setting</pref>
+            <pref>power_effects</pref>
+            <pref>menu_advanced_options</pref>
+            <pref>software_version</pref>
+        </item>
+        <item name="eu_pa_country">
+            <pref>IDN</pref>
+            <pref>MYS</pref>
+            <pref>NZL</pref>
+            <pref>AUS</pref>
+            <pref>SGP</pref>
+            <pref>THA</pref>
+            <pref>VNM</pref>
+            <pref>MMR</pref>
+            <pref>TWN</pref>
+            <pref>BGD</pref>
+            <pref>NPL</pref>
+        </item>
+        <item name="eu_oceania_country">
+            <pref>AUS</pref>
+            <pref>NZL</pref>
+            <pref>IDN</pref>
+        </item>
+        <item name="eu_common_country">
+            <pref>AUT</pref>
+            <pref>BEL</pref>
+            <pref>CHE</pref>
+            <pref>CZE</pref>
+            <pref>DEU</pref>
+            <pref>DNK</pref>
+            <pref>ESP</pref>
+            <pref>FIN</pref>
+            <pref>FRA</pref>
+            <pref>GBR</pref>
+            <pref>ITA</pref>
+            <pref>LUX</pref>
+            <pref>NLD</pref>
+            <pref>NOR</pref>
+            <pref>SWE</pref>
+            <pref>BGR</pref>
+            <pref>HRV</pref>
+            <pref>GRC</pref>
+            <pref>HUN</pref>
+            <pref>IRL</pref>
+            <pref>POL</pref>
+            <pref>PRT</pref>
+            <pref>ROU</pref>
+            <pref>RUS</pref>
+            <pref>SRB</pref>
+            <pref>SVK</pref>
+            <pref>SVN</pref>
+            <pref>TUR</pref>
+            <pref>EST</pref>
+            <pref>UKR</pref>
+            <pref>MNE</pref>
+            <pref>ARE</pref>
+        </item>
+        <item name="eu_ews_country">
+            <pref>ARG</pref>
+            <pref>BOL</pref>
+            <pref>BWA</pref>
+            <pref>BRA</pref>
+            <pref>CRI</pref>
+            <pref>CHL</pref>
+            <pref>ECU</pref>
+            <pref>GTM</pref>
+            <pref>HND</pref>
+            <pref>JPN</pref>
+            <pref>MDV</pref>
+            <pref>NIC</pref>
+            <pref>PRY</pref>
+            <pref>PHL</pref>
+            <pref>PER</pref>
+            <pref>LKA</pref>
+            <pref>URY</pref>
+            <pref>VEN</pref>
+        </item>
+        <item name="col_country">
+            <pref>COL</pref>
+            <pref>PAN</pref>
+        </item>
+    </customer>
+
+
+    <customer name="funai">
+        <item name="sound_effects">
+            <pref>Equalizer</pref>
+            <pref>Equalizer</pref>
+            <pref>Equalizer</pref>
+            <pref>Equalizer</pref>
+            <pref>Equalizer</pref>
+            <pref>Reset</pref>
+        </item>
+
+        <item name="picture_effects">
+            <pref>Picture Mode</pref>
+            <pref>Equalizer</pref>
+            <pref>Equalizer</pref>
+            <pref>Equalizer</pref>
+            <pref>Equalizer</pref>
+            <pref>Equalizer</pref>
+            <pref>Advanced Video</pref>
+        </item>
+
+        <item name="advanced_video">
+            <pref>Effect</pref>
+            <pref>MJC</pref>
+        </item>
+
+        <item name="common_misc">
+            <pref>network_wow</pref>
+            <pref>network_wol</pref>
+            <pref>hdmi2_setting</pref>
+            <pref>menu_advanced_options</pref>
+        </item>
+    </customer>
+</config>

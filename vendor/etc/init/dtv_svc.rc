@@ -1,0 +1,9 @@
+# dtv_svc service
+service dtv-svc /vendor/bin/sh /vendor/bin/dtv_svc.sh
+    class main
+    console
+    oneshot
+    group media system graphics input bluetooth shell drmrpc everybody net_raw
+    capabilities NET_RAW
+    seclabel u:r:mt_dtv-svc:s0
+

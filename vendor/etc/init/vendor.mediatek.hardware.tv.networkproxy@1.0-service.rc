@@ -1,0 +1,4 @@
+service networkproxy-hal-1-0 /vendor/bin/hw/vendor.mediatek.hardware.tv.networkproxy@1.0-service
+    class hal animation
+    user system
+    group system inet net_admin net_raw

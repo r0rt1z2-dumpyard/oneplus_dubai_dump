@@ -1,0 +1,4 @@
+service tv-oneplustvapi-1-0 /vendor/bin/hw/vendor.mediatek.tv.OneplusTvApi@1.0-service
+    class hal
+    user root
+    group root

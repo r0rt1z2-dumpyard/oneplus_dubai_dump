@@ -1,0 +1,7 @@
+# mtk_rm service
+service mtk_rm /vendor/bin/sh /vendor/bin/mtk_rm.sh
+    class core
+    oneshot
+    group media system graphics
+    seclabel u:r:mt_mtk_rm:s0
+

@@ -1,0 +1,73 @@
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Generic key layout file for full alphabetic US English PC style external keyboards.
+#
+# This file is intentionally very generic and is intended to support a broad rang of keyboards.
+# Do not edit the generic key layout to support a specific keyboard; instead, create
+# a new key layout file with the required keyboard configuration.
+#
+
+key usage 0x0c0093 1
+key usage 0x0c0061 2
+key usage 0x0c0088 3
+key usage 0x0c0063 4
+key usage 0x0c0089 5
+key usage 0x0c0065 6
+key usage 0x0c008A 7
+key usage 0x0c008B 8
+key usage 0x0c0082 9
+key usage 0x0c0083 0
+key usage 0x0c0060 INFO
+key usage 0x0c0091 TV_INPUT
+key usage 0x0c00e2 VOLUME_MUTE
+key usage 0x0c0223 HOME
+key usage 0x0c0224 BACK
+key usage 0x0c0040 MENU
+key usage 0x0c0094 TV
+#key usage 0x0c0041 DPAD_CENTER
+#key usage 0x0c0042 DPAD_UP
+#key usage 0x0c0043 DPAD_DOWN
+#key usage 0x0c0044 DPAD_LEFT
+#key usage 0x0c0045 DPAD_RIGHT
+key usage 0x0c018e STEM_1
+key usage 0x0c025f TV_INPUT_COMPONENT_1
+key usage 0x0c0073 TV_INPUT_COMPOSITE_1
+key usage 0x0c0092 TV_INPUT_COMPOSITE_2
+key usage 0x0c00e9 VOLUME_UP
+key usage 0x0c00ea VOLUME_DOWN
+key usage 0x0c009c CHANNEL_UP
+key usage 0x0c009d CHANNEL_DOWN
+key usage 0x0c0097 TV_TELETEXT
+key usage 0x0c0221 VOICE_ASSIST
+key usage 0x0c00bc GUIDE
+key usage 0x0c00b3 MEDIA_FAST_FORWARD
+key usage 0x0c00b4 MEDIA_REWIND
+key usage 0x0c00b0 MEDIA_PLAY
+key usage 0x0c00b1 MEDIA_PAUSE
+key usage 0x0c0098 CAPTIONS
+key usage 0x0c00a0 MUHENKAN
+key usage 0x0c0069 PROG_RED
+key usage 0x0c006a PROG_GREEN
+key usage 0x0c006b PROG_YELLOW
+key usage 0x0c006c PROG_BLUE
+key usage 0x0c01c5 CUT
+key usage 0x0c0196 TV_INPUT_VGA_1
+
+key 103 DPAD_UP
+key 105 DPAD_LEFT
+key 106 DPAD_RIGHT
+key 108 DPAD_DOWN
+key 353 DPAD_CENTER
