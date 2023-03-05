@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.heytap.tvapiservice">
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="permission android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.DEVICE_POWER"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    </privapp-permissions>
+
+    <!-- 20201203 Furdargon.Zuo -->
+    <privapp-permissions package="net.oneplus.odm">
+        <permission name="android.permission.READ_LOGS"/>
+    </privapp-permissions>
+	
+	
+    <!-- 20201204 chips.wang -->
+    <privapp-permissions package="com.oneplus.tv.remote">
+       <permission name="android.permission.READ_LOGS"/>
+       <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+       <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+       <permission name="android.permission.READ_DREAM_STATE"/>
+       <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+       <permission name="android.permission.LOCAL_MAC_ADDRESS"/>
+       <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+       <permission name="android.permission.CAPTURE_AUDIO_HOTWORD"/>
+       <permission name="android.permission.LOCAL_MAC_ADDRESS"/>
+       <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+       <permission name="android.permission.SHUTDOWN"/>
+       <permission name="android.permission.WRITE_DREAM_STATE"/>
+       <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+       <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+       <permission name="android.permission.MANAGE_USERS"/>
+       <permission name="android.permission.MANAGE_VOICE_KEYPHRASES"/>
+       <permission name="android.permission.REAL_GET_TASKS"/>
+       <permission name="android.permission.FORCE_STOP_PACKAGES"/>
+       <permission name="android.permission.GLOBAL_SEARCH"/>
+       <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+       <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+       <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+       <permission name="android.permission.BIND_TV_REMOTE_SERVICE"/>
+       <permission name="android.permission.HDMI_CEC"/>
+       <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <!-- Modify by June.Tang, 20210827, merge OptvSurpport & OptvLiveTV -->
+    <privapp-permissions package="com.heytap.tv.livetv">
+        <permission name="android.permission.HDMI_CEC"/>
+        <permission name="android.permission.SHUTDOWN"/>
+        <permission name="android.permission.SET_TIME_ZONE" />
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.CHANGE_CONFIGURATION" />
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.TV_INPUT_HARDWARE"/>
+        <permission name="android.permission.MODIFY_PARENTAL_CONTROLS" />
+    </privapp-permissions>
+
+    <!-- 20201204 goen.li -->
+    <privapp-permissions package="com.android.tv.settings">
+        <permission name="android.permission.READ_DREAM_STATE"/>
+        <permission name="android.permission.WRITE_DREAM_STATE"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+	<permission name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+        <permission name="android.permission.INTERACT_ACROSS_USERS" />
+        <permission name="android.permission.DELETE_CACHE_FILES"/>
+        <permission name="android.permission.SET_TIME_ZONE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.DUMP"/>
+        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
+        <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+        <permission name="android.permission.SET_TIME"/>
+        <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+        <permission name="android.permission.BACKUP"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.USE_RESERVED_DISK"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.RECOVERY"/>
+        <permission name="android.permission.SHUTDOWN"/>
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="android.permission.ACCESS_CACHE_FILESYSTEM"/>
+    </privapp-permissions>
+
+    <!-- 20210125 juen.tang -->
+    <privapp-permissions package="com.oneplus.tv.android.account">
+	<permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    </privapp-permissions>
+	
+	    <!-- 20210310 job.jing -->
+    <privapp-permissions package="com.oneplus.tv.sharealbum">
+	<permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    </privapp-permissions>
+
+    <!-- 20210420 fany.gong -->
+    <privapp-permissions package="com.heytap.accessory">
+        <permission name="android.permission.READ_PHONE_STATE" />
+        <permission name="android.permission.INTERNET" />
+        <permission name="android.permission.WAKE_LOCK" />
+        <permission name="android.permission.READ_DREAM_STATE"/>
+        <permission name="android.permission.WRITE_DREAM_STATE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <permission name="android.permission.ACCESS_WIFI_STATE" />
+        <permission name="android.permission.ACCESS_NETWORK_STATE" />
+        <permission name="android.permission.BLUETOOTH" />
+        <permission name="android.permission.BLUETOOTH_ADMIN" />
+        <permission name="android.permission.CHANGE_WIFI_STATE" />
+        <permission name="android.permission.FOREGROUND_SERVICE" />
+        <permission name="android.permission.LOCAL_MAC_ADDRESS" />
+        <permission name="android.permission.BLUETOOTH_PRIVILEGED" />
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.WRITE_SETTINGS" />
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" />
+        <permission name="android.permission.ACCESS_FINE_LOCATION" />
+        <permission name="android.permission.UPDATE_DEVICE_STATS" />
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED" />
+        <permission name="android.permission.MODIFY_AUDIO_SETTINGS" />
+        <permission name="android.permission.CAMERA" />
+        <permission name="android.permission.RECORD_AUDIO" />
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+        <permission name="android.permission.INTERACT_ACROSS_USERS" />
+    </privapp-permissions>
+</permissions>

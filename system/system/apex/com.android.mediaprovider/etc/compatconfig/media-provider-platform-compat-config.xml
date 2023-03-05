@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<config><compat-change description="Enables checks to stop apps from inserting and updating to private files via media provider." enableAfterTargetSdk="30" id="172100307" name="ENABLE_CHECKS_FOR_PRIVATE_FILES" /></config>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+
+<config>
+
+    <!-- This file is used for including the provider authority in the preloaded apks who own the system permission.
+         The authorities which are contained here mean that their "content" theme urls can be passed
+         to the third apps.
+    -->
+    <op-provider authority="com.heytap.tv.file.provider" />
+    <op-provider authority="com.heytap.tv.filebrowser" />
+    <op-provider authority="com.heytap.rom.service" />
+
+    <!-- The packages which can be started when system is booting up. -->
+    <boot-persist package="com.oneplus.tv.android.account"/>
+    <boot-persist package="com.oneplus.dlna"/>
+    <boot-persist package="com.oneplus.skin"/>
+    <boot-persist package="com.oneplus.tv.remote"/>
+    <boot-persist package="oneplus.smarthome"/>
+    <boot-persist package="com.android.se"/>
+    <boot-persist package="com.mediatek.tv.factory"/>
+    <boot-persist package="com.heytap.rom.service"/>
+    <boot-persist package="com.heytap.tv.moduleupdate"/>
+    <boot-persist package="com.heytap.tv.support"/>
+    <boot-persist package="com.heytap.tvapiservice"/>
+    <boot-persist package="com.mediatek.tvinput"/>
+    <boot-persist package="com.heytap.olink"/>
+
+    <dream-wake-pkg package="com.google.android.apps.mediashell"/>
+    <dream-wake-pkg package="com.heytap.tv.videoplayer"/>
+    <dream-wake-pkg package="com.netflix.ninja"/>
+    <dream-wake-pkg package="com.amazon.amazonvideo.livingroom"/>
+    <dream-wake-pkg package="com.heytap.tv.btspeaker"/>
+    <dream-wake-pkg package="com.google.android.youtube.tv"/>
+    <dream-wake-pkg package="com.heytap.tv.livetv"/>
+
+    <ota-package package="com.lionsgateplay.videoapp" />
+
+    <!-- op-service list packages that are allowed to start service
+         in the background.(Using startService)
+    -->
+
+    <!-- start-3rd-include list third packages that are allowed to start with receiving
+         android.permission.RECEIVE_BOOT_COMPLETED -->
+
+    <!-- start-system-exclude list system packages that are not allowed to start with receiving
+         android.permission.RECEIVE_BOOT_COMPLETED -->
+    <start-system-exclude package="com.netflix.ninja" />
+    <start-system-exclude package="com.amazon.amazonvideo.livingroom" />
+    <start-system-exclude package="com.google.android.youtube.tvmusic" />
+    <start-system-exclude package="com.google.android.play.games" />
+    <start-system-exclude package="com.heytap.tv.btspeaker" />
+    <start-system-exclude package="com.heytap.tv.livetv" />
+    <start-system-exclude package="com.heytap.tv.filebrowser" />
+    <start-system-exclude package="com.oneplus.tv.userguide" />
+    <start-system-exclude package="com.oneplus.tv.sharealbum" />
+    <start-system-exclude package="in.startv.hotstar" />
+    <start-system-exclude package="com.tv.sonyliv" />
+    <start-system-exclude package="com.spotify.tv.android" />
+    <start-system-exclude package="com.graymatrix.did" />
+    <start-system-exclude package="com.android.providers.downloads" />
+    <start-system-exclude package="com.google.android.videos" />
+    <start-system-exclude package="com.google.android.youtube.tv" />
+    <start-system-exclude package="com.google.android.marvin.talkback" />
+    <start-system-exclude package="com.jiostb.jiogames" />
+    <start-system-exclude package="com.oneplus.tv.screensaver" />
+    <start-system-exclude package="com.android.shell" />
+    <start-system-exclude package="com.google.android.packageinstaller" />
+    <start-system-exclude package="com.heytap.tv.assistant.oneplus" />
+    <start-system-exclude package="com.google.android.videos" />
+
+    <!-- custom-white-adj list packages that whose OOM adjustment is not allowed to be less than a certain number.
+         adjustment must be between -1000 and 1000.
+         Example: <custom-white-adj package="xxx" adjustment="[-1000, 1000]" /> -->
+    <custom-white-adj package="com.netflix.benchflixonandroid" adjustment="-800" />
+    <custom-white-adj package="com.heytap.accessory" adjustment="-800" />
+    <custom-white-adj package="com.heytap.iot.castservice" adjustment="-800" />
+    <custom-white-adj package="com.heytap.iot.synergy" adjustment="-800" />
+    <custom-white-adj package="com.heytap.rom.service" adjustment="-800" />
+    <custom-white-adj package="com.heytap.optvbtlink" adjustment="-800" />
+    <custom-white-adj package="oneplus.smarthome" adjustment="0" />
+    <custom-white-adj package="com.android.tv.settings" adjustment="200" />
+    <custom-white-adj package="com.oneplus.storedemo" adjustment="-800" />
+    <custom-white-adj package="com.oneplus.tv.remote" adjustment="-800" />
+    <custom-white-adj package="com.heytap.olink" adjustment="-800" />
+
+</config>

@@ -1,0 +1,7 @@
+service screen_anim /system/bin/shutdownanimation
+    class core
+    disabled
+    oneshot
+    shutdown critical
+
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<config>
+    <op-start-item keycode="KEYCODE_MENU" longPress="true">
+        <intent type="activity" targetUser="current">
+            <action name="android.settings.SETTINGS" />
+            <category name="android.intent.category.DEFAULT" />
+            <flags-list>
+                <flag name="FLAG_ACTIVITY_NEW_TASK" />
+                <flag name="FLAG_ACTIVITY_RESET_TASK_IF_NEEDED" />
+            </flags-list>
+        </intent>
+    </op-start-item>
+
+    <op-start-item keycode="KEYCODE_F4">
+        <intent type="broadcast" targetUser="all">
+            <action name="com.oneplus.action.RC_CHARGE_SHIPPING_MODE" />
+            <package name="com.android.systemui" />
+            <flags-list>
+                <flag name="FLAG_RECEIVER_FOREGROUND" />
+            </flags-list>
+        </intent>
+    </op-start-item>
+
+    <op-start-item keycode="KEYCODE_F6">
+        <intent type="activity" targetUser="current">
+            <action name="android.intent.action.MAIN" />
+            <category name="android.intent.category.DEFAULT" />
+            <component
+                package="com.android.tv.settings"
+                class="com.android.tv.settings.inputsource.InputSourceDisplayActivity" />
+        </intent>
+    </op-start-item>
+
+    <op-start-item keycode="KEYCODE_F10">
+        <intent type="broadcast" targetUser="all">
+            <action name="com.oneplus.action.RC_CHARGE_START" />
+            <package name="com.android.systemui" />
+            <flags-list>
+                <flag name="FLAG_RECEIVER_FOREGROUND" />
+            </flags-list>
+        </intent>
+    </op-start-item>
+
+    <op-start-item keycode="KEYCODE_F8">
+        <intent type="broadcast" targetUser="all">
+            <action name="com.oneplus.action.RC_CHARGE_STOP" />
+            <package name="com.android.systemui" />
+            <flags-list>
+                <flag name="FLAG_RECEIVER_FOREGROUND" />
+            </flags-list>
+        </intent>
+    </op-start-item>
+
+    <op-start-item keycode="KEYCODE_F9">
+        <intent type="activity" targetUser="current">
+            <component
+                package="com.heytap.tvapiservice"
+                class="com.heytap.rom.service.DialogActivity" />
+            <flags-list>
+                <flag name="FLAG_ACTIVITY_NEW_TASK" />
+            </flags-list>
+            <extra-list>
+                <extra name="flag" value="RC_LOSS_CONNECTION" />
+            </extra-list>
+        </intent>
+    </op-start-item>
+
+    <op-start-item keycode="KEYCODE_F11">
+        <intent type="activity" targetUser="current">
+            <component
+                package="com.oneplus.tv.quicksettings"
+                class="com.oneplus.tv.quicksettings.QuickSettingsActivity" />
+            <flags-list>
+                <flag name="FLAG_ACTIVITY_SINGLE_TOP" />
+                <flag name="FLAG_ACTIVITY_NO_HISTORY" />
+            </flags-list>
+        </intent>
+    </op-start-item>
+</config>
